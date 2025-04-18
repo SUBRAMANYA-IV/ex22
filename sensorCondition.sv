@@ -7,28 +7,82 @@ module sensorCondition(
     input logic [11:0] incline, 
     input logic [2:0] scale,
     input logic [11:0] batt,
-    input logic        
+    output logic [12:0] error,
+    output logic not_pedaling,
+    output logic TX        
 );
+
+logic cadence_Sfilt; //filtered cadence signal  
+logic cadence_rise;  
+logic candance_per; //periof of filtered candance signal 
+logic not_pedaling;
+logic [4:0] cadence; 
+
+//instantiate cadence filter module to filter raw candence signal 
+cadence_filt filt1((.clk(clk), .rst_n(rst_n) , .cadence(cadence_raw), .cadence_filt(cadence_Sfilt), .cadence_rise(cadence_rise));
+
+cadence_meas meas1( .clk(clk), .rst_n(rst_n), .cadence_filt(cadence_filt), .cadence_per(candance_per), .not_pedaling(not_pedaling));
+
+
+cadence_LU(.cadence_per(candance_per),.cadence())
 
 
 endmodule
 
 
 module cadence_meas(
-    input wire cadence_filt;
-    output wire[7:0] cadence_per_wire;
-    output wire not_pedaling;
+    input clk,
+    input rst_n,
+    input cadence_filt,
+    output logic [8:0] cadence_per,
+    output logic not_pedaling
 );
 
-//24 bit counter
-reg[23:0] threeSecTimer;
+//FAST SIM logic that was provided
+localparam THIRD_SEC_REAL = 24'hE4E1C0;
+localparam THIRD_SEC_FAST = 24'h007271;
+localparam THIRD_SEC_UPPER = 8'hE4;
+
+logic capture_per;
+logic third_sec_equals;
+logic [23:0] third_sec_cnt;
+
+//equals block for THIRD_SEC
+always_comb begin
+    if (third_sec_cnt == THIRD_SEC) begin
+        third_sec_equals = 1'b1;
+    end else begin
+        third_sec_equals = 1'b0;
+    end
+end
+
+//assign capture_per
+assign capture_per = third_sec_equals || cadence_rise;
 
 
+//assign third_sec_cnt (value stored in first flop)
+always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n) 
+        third_sec_cnt <= 24'h0;
+    else if (cadence_rise) 
+        third_sec_cnt <= 24'h0;
+    else if (!third_sec_equals) 
+        third_sec_cnt <= third_sec_cnt + 1;
+    else
+        third_sec_cnt <= third_sec_cnt;
+end
+    
 
+generate if (FAST_SIM)
+    localparam THIRD_SEC = THIRD_SEC_FAST;
+else
+    localparam THIRD_SEC = THIRD_SEC_REAL;
+endgenerate
 
 // rising edge detection for cadence filt
 wire cadence_rise;
 reg rise_reg;
+
 always(@posedge clk, negedge rst_n)begin
     if(!rst_n)rise_reg<=1'b0;
     else rise_reg<=cadence_filt;
@@ -37,7 +91,17 @@ assign cadence_rise=rise_reg&~cadence_filt;
 
 
 //on the rising edge of cadence_filt, a 24 bit timer is cleared,
-//BUT its upper 8 bits are captured (or bits [14:7) if FAST_SIM)
+//BUT si
+
+endmodule
+    output wire[7:0] cadence_per_wire;
+    output wire not_pedaling;
+//24 bit counter
+reg[23:0] threeSecTimer;
+
+
+
+cadence_risecadence_rise) if FAST_SIM)
 //are captured in an 8 bit register that forms cadence_per
 
 
@@ -85,6 +149,4 @@ always@(posedge clk)begin
 
 end
 
-
-
-endmodule
+7
