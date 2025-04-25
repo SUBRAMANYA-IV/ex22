@@ -15,7 +15,7 @@ module sensorCondition(
     output logic TX
 );
         
-parameter FAST_SIM = 0;
+parameter FAST_SIM = 1;
 
 logic [11:0] curr_avg;
 logic [11:0] torque_avg;
@@ -110,7 +110,15 @@ assign newT_accum = ((torque_accum * 31) / 32) + torque;
 assign torque_avg = torque_accum[16:5];
 
 
-assign error = target_curr - curr_avg;
+//FIX ERROR: SHOULD INCLUDE LOW_BATT_THRES AND NOT_PEDALING
+localparam LOW_BATT_THRES=12'ha98;
+
+always_comb begin
+  if(not_pedaling || batt<LOW_BATT_THRES)
+    error=13'b0;
+  else
+    error=target_curr-curr_avg;
+end
 
 
 endmodule
@@ -262,6 +270,10 @@ end
 always@(posedge clk)begin
     cadence_per <= cadence_per_input;
 end
+
+
+
+
 
 
 endmodule
