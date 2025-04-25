@@ -34,7 +34,7 @@ logic signed [11:0] target_curr;
 
 //instantiate cadence filter module to filter raw candence signal 
 cadence_filt #(.FAST_SIM(FAST_SIM)) filt1(.clk(clk), .rst_n(rst_n) , .cadence(cadence_raw), .cadence_filt(cadence_Sfilt), .cadence_rise(cadence_rise));
-cadence_meas #(.FAST_SIM(FAST_SIM)) meas1( .clk(clk), .rst_n(rst_n), .cadence_filt(cadence_filt), .cadence_per(candance_per), .not_pedaling(not_pedaling));
+cadence_meas #(.FAST_SIM(FAST_SIM)) meas1( .clk(clk), .rst_n(rst_n), .cadence_filt(cadence_Sfilt), .cadence_per(candance_per), .not_pedaling(not_pedaling));
 cadence_LU lu1(.cadence_per(candance_per),.cadence(cadence));
 
 //instantiate telemetry (also contains UART transmitter) ****NEEDS TO FILL IN PARAMS***
@@ -57,27 +57,24 @@ assign pedaling_resumes = ~not_pedaling & pedaling_resREG;
 //<siganls used for current exponential average>
 logic [13:0] current_accum; 
 logic [13:0] newC_accum; 
-
 logic  include_smpl; 
-
-logic [22:0] tmr_c;  
+logic [21:0] tmr_c;  
 
 //determine when timer is full 
 generate if (FAST_SIM) 
-    assign include_smpl = &tmr_c[16:0];  //during fast simulation reduce bit width of counter 
+    assign include_smpl = &tmr_c[15:0];  //during fast simulation reduce bit width of counter 
 else
     assign include_smpl = &tmr_c;
 endgenerate
 
 
-//free running timer for current samples
+//free running timer for collecting periodic current samples
 always_ff @(posedge clk or negedge rst_n)begin 
     if(!rst_n)
         tmr_c <= 0; 
     else 
         tmr_c <= tmr_c +1;     
 end 
-
 
 //current exponential running average 
 always_ff @(posedge clk or negedge rst_n)begin 
@@ -95,7 +92,7 @@ logic [16:0] torque_accum;
 logic [16:0] newT_accum;
 
 
-//current exponential running average 
+//torque exponential running average 
 always_ff @(posedge clk or negedge rst_n) begin 
     if(!rst_n)
         torque_accum <= 0;
@@ -120,10 +117,7 @@ always_comb begin
     error=target_curr-curr_avg;
 end
 
-
 endmodule
-
-
 
 module cadence_meas(
     input clk,
@@ -148,9 +142,7 @@ else
    assign THIRD_SEC = THIRD_SEC_REAL;
 endgenerate
 
-logic capture_per;
-logic third_sec_equals;
-logic [23:0] third_sec_cnt;
+/*
 
 
 
@@ -164,8 +156,6 @@ always_comb begin
 end
 
 //assign capture_per
-assign capture_per = third_sec_equals || cadence_rise;
-
 
 //assign third_sec_cnt (value stored in first flop)
 always_ff @(posedge clk or negedge rst_n) begin
@@ -179,19 +169,11 @@ always_ff @(posedge clk or negedge rst_n) begin
         third_sec_cnt <= third_sec_cnt;
 end
     
-
+*/
 // rising edge detection for cadence filt
 
-logic rise_reg;
 
-always@(posedge clk, negedge rst_n)begin
-    if(!rst_n)
-        rise_reg<=1'b0;
-    else 
-        rise_reg<=cadence_filt;
-end
 
-assign cadence_rise = rise_reg &~ cadence_filt;
 
 
 //on the rising edge of cadence_filt, a 24 bit timer is cleared,
@@ -219,11 +201,23 @@ scenario.
 //NOTE: CADENCE_PER HAS A SYNCHRONOUS RESET?!
 //STAGE 1 ASYNCH RESET. 
 //should values out of fastsim?
+logic third_sec_equals;
+logic [23:0] third_sec_cnt;
+logic capture_per;
+logic rise_reg;
+always@(posedge clk, negedge rst_n)begin
+    if(!rst_n)
+        rise_reg<=1'b0;
+    else 
+        rise_reg<=cadence_filt;
+end
+
 logic [23:0] threeSecTimer;
+assign cadence_rise = rise_reg &~ cadence_filt;
+assign capture_per = third_sec_equals || cadence_rise;
 
-logic [7:0] stage_1_output = (FAST_SIM) ? threeSecTimer[14:7] : threeSecTimer[23:16];
-
-
+//ERROR: unnessacery, as stg_2_input already selects?
+//logic [7:0] stage_1_output = (FAST_SIM) ? threeSecTimer[14:7] : threeSecTimer[23:16];
 always@(posedge clk, negedge rst_n) begin
     //check for syncrhonous reset?
     if (!rst_n) begin
@@ -268,11 +262,12 @@ always_comb begin
 end
 
 always@(posedge clk)begin
+    if(!rst_n)begin
+        cadence_per<=THIRD_SEC_UPPER;
+    end else begin
     cadence_per <= cadence_per_input;
+    end
 end
-
-
-
 
 
 
