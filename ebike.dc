@@ -1,0 +1,60 @@
+
+#read in files
+read_file -format sverilog {ebike.sv A2D_intf.sv Inert_intf.sv reset_synch.sv desiredDrv.sv cadence_filt.sv Telemetry.sv UART_tx.sv PID.sv brushless.sv MtrDvr.sv PWM.sv PB_intf.sv sensorCondition.sv }
+
+#set top level for design 
+set current_design ebike
+
+#create clk @400 Mhz (period in nanoseconds) 
+create_clock -name "clk" -period 2.5 -waveform {0 1} {clk}
+
+#disable buffering on clk
+set_dont_touch_network [find port clk]
+
+#set input delay for all inputs (prim_inputs will be used to address all inputs)
+set prim_inputs [remove_from_collection [all_inputs] [find port clk]]
+
+#set input delay
+set_input_delay -clock clk 0.3 $prim_inputs
+
+#set drive strength
+set_driving_cell -lib_cell NAND2X2_LVT -library saed32lvt_tt0p85v25c $prim_inputs
+
+#set rst_n to stronly driven
+set_drive 0.0001 rst_n
+
+#set output delay 
+set_output_delay -clock clk 0.5 [all_outputs]
+
+#tell synopsys how much load it has to drive default unit is fF
+set_load 50 [all_outputs] 
+
+#set transition time
+set_max_transition 0.20 [current_design] 
+
+set_clock_uncertainty 0.15 clk 
+
+#make guess at parasitic capacitence 
+set_wire_load_model -name 16000 -library saed32lvt_tt0p85v25c
+
+#compile the design
+compile -map_effort high 
+
+ungroup -all -flatten
+
+compile -map_effort medium
+
+#write out resulting synthesized netlist 
+write -format verilog ebike -output ebike.vg
+
+# Generate a min delay (setup) report
+report_timing -delay_type min 
+
+# Generate a max delay (hold) report
+report_timing -delay_type max 
+
+# Generate an area report
+report_area > area_report.txt
+
+
+write_sdc ebike.sdc
