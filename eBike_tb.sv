@@ -102,6 +102,7 @@ module eBike_tb();
     clr_rdy = 1'b0;
     clk = 1'b0;
     RST_n = 1'b0;
+    cadence = 1'b0;
     BATT = 12'hfff;
     BRAKE = 12'hfff;
     TORQUE = 12'h000;
@@ -116,7 +117,6 @@ module eBike_tb();
   * Check that the torque and current values are corre
   */
   task telemetryTest();
-    repeat(3) begin
         // We don't stimulate current in our TB, so just visually check for reasonable waveforms
         BATT = $random()%13'h1000;
         TORQUE = $random()%13'h1000; 
@@ -186,10 +186,6 @@ module eBike_tb();
         end
         @(posedge clk);
         clr_rdy = 0;
-    end
-
-    $display("YAHOO! All tests passed!");
-    $stop();
   endtask
 
   task torqueTest();
