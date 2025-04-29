@@ -30,6 +30,7 @@ logic pos_ov;                       //Used to determine if positive overflow occ
 logic [11:0] i_term;                // will hold final I term
 logic signed [13:0] p_term;         // will hold final P term 
 
+logic drv_mag1; 
 
 //accumalator flop 
 always_ff @(posedge clk, negedge rst_n) begin 
@@ -74,7 +75,15 @@ assign D_term = saturated_diff <<< 1; //now multiply the result by 2  ( <<< mean
 //  << Combining the the PID terms together  >>
 logic [13:0] PID;
 assign PID = p_term + {2'b00, i_term} + {{4{D_term[9]}} ,D_term}; //sum of all terms
-assign drv_mag = PID[13] ? (12'h000) : (  PID[12]  ? 12'hFFF : PID[11:0] );
+assign drv_mag1 = PID[13] ? (12'h000) : (  PID[12]  ? 12'hFFF : PID[11:0] );
+
+always_ff @(posedge clk, negedge rst_n)begin 
+	if(!rst_n)
+	  drv_mag <= 0;            
+    else 
+      drv_mag <= drv_mag1;
+end 
+
 
 //General counter that increment unconditionally every clk cycle will be used to generate a full signal periodically
 always_ff @(posedge clk or negedge rst_n)  begin 
