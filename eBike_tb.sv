@@ -66,7 +66,7 @@ module eBike_tb();
   logic [7:0] rx_data;
   logic rdy;
   logic clr_rdy;
-  UART_rcv monitor(.clk(clk), .rst_n(rst_n), .RX(TX_RX), .rdy(rdy), .rx_data(rx_data), .clr_rdy(clr_rdy)); // TODO: How do we check signals from telemetry?
+  UART_rcv monitor(.clk(clk), .rst_n(RST_n), .RX(TX_RX), .rdy(rdy), .rx_data(rx_data), .clr_rdy(clr_rdy)); // TODO: How do we check signals from telemetry?
 
   ////////////////////////////
   // Main testcases to run //

@@ -598,3 +598,218 @@ run -all
 # GetModuleFileName: The specified module could not be found.
 # 
 # 
+restart
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+add wave -position insertpoint  \
+sim:/eBike_tb/rdy
+restart
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Compile of A2D_intf.sv was successful.
+# Compile of AnalogModel.sv was successful.
+# Compile of brushless.sv was successful.
+# Compile of cadence_filt.sv was successful.
+# Compile of cadence_LU.sv was successful.
+# Compile of desiredDrive.sv was successful.
+# Compile of eBike.sv was successful.
+# Compile of eBike_tb.sv was successful.
+# Compile of eBikePhysics.sv was successful.
+# Compile of inert_intf.sv was successful.
+# Compile of inertial_integrator.sv was successful with warnings.
+# Compile of mtr_drv.sv was successful.
+# Compile of nonoverlap.sv was successful.
+# Compile of PID.sv was successful.
+# Compile of PWM.sv was successful.
+# Compile of rst_synch.sv was successful.
+# Compile of sensorCondition.sv was successful.
+# Compile of sensorCondition_tb.sv was successful.
+# Compile of SPI_mnrch.sv was successful.
+# Compile of telemetry.sv was successful.
+# Compile of tgglMd.sv was successful.
+# Compile of UART_tx.sv was successful.
+# Compile of SPI_ADC128S.sv was successful.
+# Compile of UART_rcv.sv was successful.
+# 24 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.eBike_tb
+# Loading work.AnalogModel
+# Loading work.SPI_ADC128S
+# Loading work.eBikePhysics
+# Loading work.eBike
+# Loading work.rst_synch
+# Loading work.A2D_intf
+# Loading work.fourteen_counter
+# Loading work.SPI_mnrch
+# Loading work.shift_cntr
+# Loading work.sclk_cntr
+# Loading work.monarch_shft
+# Loading work.sensorCondition
+# Loading work.cadence_filt
+# Loading work.cadence_meas
+# Loading work.cadence_LU
+# Loading work.telemetry
+# Loading work.counter_20b
+# Loading work.UART_tx
+# Loading work.desiredDrive
+# Loading work.PID
+# Loading work.brushless
+# Loading work.mtr_drv
+# Loading work.PWM
+# Loading work.nonoverlap
+# Loading work.inert_intf
+# Loading work.tmr_16b
+# Loading work.INT_synch
+# Loading work.inertial_integrator
+# Loading work.tgglMd
+# Loading work.UART_rcv
+# Loading work.d_flipflop
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Compile of A2D_intf.sv was successful.
+# Compile of AnalogModel.sv was successful.
+# Compile of brushless.sv was successful.
+# Compile of cadence_filt.sv was successful.
+# Compile of cadence_LU.sv was successful.
+# Compile of desiredDrive.sv was successful.
+# Compile of eBike.sv was successful.
+# Compile of eBike_tb.sv was successful.
+# Compile of eBikePhysics.sv was successful.
+# Compile of inert_intf.sv was successful.
+# Compile of inertial_integrator.sv was successful with warnings.
+# Compile of mtr_drv.sv was successful.
+# Compile of nonoverlap.sv was successful.
+# Compile of PID.sv was successful.
+# Compile of PWM.sv was successful.
+# Compile of rst_synch.sv was successful.
+# Compile of sensorCondition.sv was successful.
+# Compile of sensorCondition_tb.sv was successful.
+# Compile of SPI_mnrch.sv was successful.
+# Compile of telemetry.sv was successful.
+# Compile of tgglMd.sv was successful.
+# Compile of UART_tx.sv was successful.
+# Compile of SPI_ADC128S.sv was successful.
+# Compile of UART_rcv.sv was successful.
+# 24 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.eBike_tb
+# Loading work.AnalogModel
+# Loading work.SPI_ADC128S
+# Loading work.eBikePhysics
+# Loading work.eBike
+# Loading work.rst_synch
+# Loading work.A2D_intf
+# Loading work.fourteen_counter
+# Loading work.SPI_mnrch
+# Loading work.shift_cntr
+# Loading work.sclk_cntr
+# Loading work.monarch_shft
+# Loading work.sensorCondition
+# Loading work.cadence_filt
+# Loading work.cadence_meas
+# Loading work.cadence_LU
+# Loading work.telemetry
+# Loading work.counter_20b
+# Loading work.UART_tx
+# Loading work.desiredDrive
+# Loading work.PID
+# Loading work.brushless
+# Loading work.mtr_drv
+# Loading work.PWM
+# Loading work.nonoverlap
+# Loading work.inert_intf
+# Loading work.tmr_16b
+# Loading work.INT_synch
+# Loading work.inertial_integrator
+# Loading work.tgglMd
+# Loading work.UART_rcv
+# Loading work.d_flipflop
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+add wave -position insertpoint sim:/eBike_tb/monitor/*
+restart
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Compile of A2D_intf.sv was successful.
+# Compile of AnalogModel.sv was successful.
+# Compile of brushless.sv was successful.
+# Compile of cadence_filt.sv was successful.
+# Compile of cadence_LU.sv was successful.
+# Compile of desiredDrive.sv was successful.
+# Compile of eBike.sv was successful.
+# Compile of eBike_tb.sv was successful.
+# Compile of eBikePhysics.sv was successful.
+# Compile of inert_intf.sv was successful.
+# Compile of inertial_integrator.sv was successful with warnings.
+# Compile of mtr_drv.sv was successful.
+# Compile of nonoverlap.sv was successful.
+# Compile of PID.sv was successful.
+# Compile of PWM.sv was successful.
+# Compile of rst_synch.sv was successful.
+# Compile of sensorCondition.sv was successful.
+# Compile of sensorCondition_tb.sv was successful.
+# Compile of SPI_mnrch.sv was successful.
+# Compile of telemetry.sv was successful.
+# Compile of tgglMd.sv was successful.
+# Compile of UART_tx.sv was successful.
+# Compile of SPI_ADC128S.sv was successful.
+# Compile of UART_rcv.sv was successful.
+# 24 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.eBike_tb
+# Loading work.AnalogModel
+# Loading work.SPI_ADC128S
+# Loading work.eBikePhysics
+# Loading work.eBike
+# Loading work.rst_synch
+# Loading work.A2D_intf
+# Loading work.fourteen_counter
+# Loading work.SPI_mnrch
+# Loading work.shift_cntr
+# Loading work.sclk_cntr
+# Loading work.monarch_shft
+# Loading work.sensorCondition
+# Loading work.cadence_filt
+# Loading work.cadence_meas
+# Loading work.cadence_LU
+# Loading work.telemetry
+# Loading work.counter_20b
+# Loading work.UART_tx
+# Loading work.desiredDrive
+# Loading work.PID
+# Loading work.brushless
+# Loading work.mtr_drv
+# Loading work.PWM
+# Loading work.nonoverlap
+# Loading work.inert_intf
+# Loading work.tmr_16b
+# Loading work.INT_synch
+# Loading work.inertial_integrator
+# Loading work.tgglMd
+# Loading work.UART_rcv
+# Loading work.d_flipflop
+# Warning in wave window restart: (vish-4014) No objects found matching '/eBike_tb/monitor/ready'. 
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Error: Byte 3 incorrectly recieved!
+#    Time: 256950 ps  Scope: eBike_tb.telemetryTest File: C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv Line: 145
+# ** Note: $stop    : C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv(146)
+#    Time: 256950 ps  Iteration: 3  Instance: /eBike_tb
+# Break in Task telemetryTest at C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv line 146
+# End time: 18:30:01 on Apr 29,2025, Elapsed time: 2:16:46
+# Errors: 1, Warnings: 1
