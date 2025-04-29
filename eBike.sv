@@ -56,7 +56,7 @@
   /////////////////////////////////////
   // Instantiate reset synchronizer //
   ///////////////////////////////////
-  reset_synch rst_sync(.RST_n(RST_n), .clk(clk), .rst_n(rst_n));
+  rst_synch rst_sync(.RST_n(RST_n), .clk(clk), .rst_n(rst_n));
   
   ///////////////////////////////////////////////////////
   // Instantiate A2D_intf to read torque & batt level //
@@ -93,6 +93,6 @@
   /////////////////////////////////////////////////////////////////
   // Instantiate PB_intf block to establish setting/LED & scale //
   ///////////////////////////////////////////////////////////////
-  PB_intf pbint(.clk(clk), .rst_n(rst_n), .tgglMd(tgglMd), .scale(scale));
+  tgglMd pbint(.clk(clk), .rst_n(rst_n), .tgglMode(tgglMd), .scale(scale));
 
 endmodule

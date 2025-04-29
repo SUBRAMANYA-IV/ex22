@@ -7,7 +7,7 @@ module sensorCondition(
     input logic [11:0] torque,
     input logic cadence_raw,
     input logic signed [11:0] curr,
-    input logic [11:0] incline, 
+    input logic [12:0] incline, 
     input logic [2:0] scale,
     input logic [11:0] batt,
     output logic signed [12:0] error,
@@ -22,7 +22,7 @@ logic [11:0] torque_avg;
 
 logic cadence_Sfilt; //filtered cadence signal  
 logic cadence_rise;  //
-logic candance_per;  //period of filtered candance signal 
+logic [7:0] cadence_per;  //period of filtered candance signal 
 
 //used to detect falling edge on not_pedaling
 logic pedaling_resREG;
@@ -34,8 +34,8 @@ logic signed [11:0] target_curr;
 
 //instantiate cadence filter module to filter raw candence signal 
 cadence_filt #(.FAST_SIM(FAST_SIM)) filt1(.clk(clk), .rst_n(rst_n) , .cadence(cadence_raw), .cadence_filt(cadence_Sfilt), .cadence_rise(cadence_rise));
-cadence_meas #(.FAST_SIM(FAST_SIM)) meas1( .clk(clk), .rst_n(rst_n), .cadence_filt(cadence_Sfilt), .cadence_per(candance_per), .not_pedaling(not_pedaling));
-cadence_LU lu1(.cadence_per(candance_per),.cadence(cadence));
+cadence_meas #(.FAST_SIM(FAST_SIM)) meas1( .clk(clk), .rst_n(rst_n), .cadence_filt(cadence_Sfilt), .cadence_per(cadence_per), .not_pedaling(not_pedaling));
+cadence_LU lu1(.cadence_per(cadence_per),.cadence(cadence));
 
 //instantiate telemetry (also contains UART transmitter) ****NEEDS TO FILL IN PARAMS***
 telemetry telem1(.clk(clk), .rst_n(rst_n), .batt_v(batt), .avg_curr(curr_avg), .avg_torque(torque_avg), .TX(TX));
@@ -123,7 +123,7 @@ module cadence_meas(
     input clk,
     input rst_n,
     input cadence_filt,
-    output logic [8:0] cadence_per,
+    output logic [7:0] cadence_per,
     output logic not_pedaling
 );
 

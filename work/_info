@@ -8,47 +8,329 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-d/home/vedaant/school_files/f-14-implementation/PSU
-vcadence_meas
+dC:/Users/allen/School/ece551/Exercise22
+vA2D_intf
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 !s110 1745591638
+Z1 !s110 1745961180
 !i10b 1
-!s100 SjE`G:mRjSm<zUBo6nfbG1
+!s100 7omfR3ZJ:<^eRoa5[A=[33
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IGlIhJ]9dl0cj67h>Y?_@i2
+INJJH1Y<Bo`7OWF0KaE]LL3
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 S1
-Z4 d/home/vedaant/school_files/spring2025/ECE551/inclass/ex22
-Z5 w1745591033
-Z6 8/home/vedaant/school_files/spring2025/ECE551/inclass/ex22/sensorCondition.sv
-Z7 F/home/vedaant/school_files/spring2025/ECE551/inclass/ex22/sensorCondition.sv
-!i122 9
-L0 128 152
+Z4 dC:/Users/allen/School/ece551/Final-Git/ex22
+Z5 w1745957857
+Z6 8C:/Users/allen/School/ece551/Final-Git/ex22/A2D_intf.sv
+Z7 FC:/Users/allen/School/ece551/Final-Git/ex22/A2D_intf.sv
+!i122 119
+L0 51 173
 Z8 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z9 !s108 1745591638.000000
-Z10 !s107 /home/vedaant/school_files/spring2025/ECE551/inclass/ex22/sensorCondition.sv|
-Z11 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/vedaant/school_files/spring2025/ECE551/inclass/ex22/sensorCondition.sv|
+Z9 !s108 1745961180.000000
+Z10 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/A2D_intf.sv|
+Z11 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/A2D_intf.sv|
 !i113 1
 Z12 o-work work -sv
 Z13 tCvgOpt 0
-vsensorCondition
+n@a2@d_intf
+vAnalogModel
 R0
 R1
 !i10b 1
-!s100 =TDED9lXl3gkS_T0nXno@3
+!s100 V5Mo]QPJ?<ojR=o8>V^H10
 R2
-I4MEhUJOP9Y8VFn7e^O<[L2
+IBGKWFfNoACnj5825CEgMY2
+R3
+S1
+R4
+w1649791202
+8C:/Users/allen/School/ece551/Final-Git/ex22/AnalogModel.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/AnalogModel.sv
+!i122 120
+Z14 L0 1 111
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/AnalogModel.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/AnalogModel.sv|
+!i113 1
+R12
+R13
+n@analog@model
+vbrushless
+R0
+Z15 !s110 1745961181
+!i10b 1
+!s100 cDC`dW0IcLLdm=hG2:5Ol1
+R2
+INe^E1>`V`bhgMhbJ8ndbT0
+R3
+S1
+R4
+R5
+8C:/Users/allen/School/ece551/Final-Git/ex22/brushless.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/brushless.sv
+!i122 121
+L0 1 126
+R8
+r1
+!s85 0
+31
+Z16 !s108 1745961181.000000
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/brushless.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/brushless.sv|
+!i113 1
+R12
+R13
+vcadence_filt
+R0
+R15
+!i10b 1
+!s100 aGfU6gLLAP9_kgFbiIAaR2
+R2
+I:2UTKGUC1WkRT=THMCH:Y0
+R3
+S1
+R4
+R5
+8C:/Users/allen/School/ece551/Final-Git/ex22/cadence_filt.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/cadence_filt.sv
+!i122 122
+L0 1 84
+R8
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/cadence_filt.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/cadence_filt.sv|
+!i113 1
+R12
+R13
+vcadence_LU
+R0
+R15
+!i10b 1
+!s100 BTkJ1lgHmZ_j@E3b@lDg@0
+R2
+IMDd4Bzd7j=38o`AG=CIYI1
+R3
+S1
+R4
+R5
+8C:/Users/allen/School/ece551/Final-Git/ex22/cadence_LU.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/cadence_LU.sv
+!i122 123
+L0 1 237
+R8
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/cadence_LU.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/cadence_LU.sv|
+!i113 1
+R12
+R13
+ncadence_@l@u
+vcadence_meas
+R0
+Z17 !s110 1745961183
+!i10b 1
+!s100 0hFH6BWJ;E^AmLeLmh][81
+R2
+Im=9QGiFXfZlXHAUG_nz0U0
+R3
+S1
+R4
+Z18 w1745961172
+Z19 8C:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition.sv
+Z20 FC:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition.sv
+!i122 135
+L0 122 153
+R8
+r1
+!s85 0
+31
+Z21 !s108 1745961183.000000
+Z22 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition.sv|
+Z23 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition.sv|
+!i113 1
+R12
+R13
+vcounter_20b
+R0
+R17
+!i10b 1
+!s100 VK6MPh;SgNK525YYOCJ@32
+R2
+I3f<>R>ic@gj:3^D]^F9c33
+R3
+S1
+R4
+R5
+Z24 8C:/Users/allen/School/ece551/Final-Git/ex22/telemetry.sv
+Z25 FC:/Users/allen/School/ece551/Final-Git/ex22/telemetry.sv
+!i122 138
+L0 5 17
+R8
+r1
+!s85 0
+31
+R21
+Z26 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/telemetry.sv|
+Z27 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/telemetry.sv|
+!i113 1
+R12
+R13
+vd_flipflop
+R0
+Z28 !s110 1745961182
+!i10b 1
+!s100 gfk:CmmRH2kaYVYUe83NJ2
+R2
+IPzPSDdfTd`zC:W5acHIbo0
+R3
+S1
+R4
+R5
+Z29 8C:/Users/allen/School/ece551/Final-Git/ex22/inert_intf.sv
+Z30 FC:/Users/allen/School/ece551/Final-Git/ex22/inert_intf.sv
+!i122 128
+L0 4 12
+R8
+r1
+!s85 0
+31
+Z31 !s108 1745961182.000000
+Z32 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/inert_intf.sv|
+Z33 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/inert_intf.sv|
+!i113 1
+R12
+R13
+vdesiredDrive
+R0
+R15
+!i10b 1
+!s100 O6h`@:;jA=GSMi4hecZ_N2
+R2
+IEbRD?7F36<[DhN]a>f<713
+R3
+S1
+R4
+R5
+8C:/Users/allen/School/ece551/Final-Git/ex22/desiredDrive.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/desiredDrive.sv
+!i122 124
+L0 1 66
+R8
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/desiredDrive.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/desiredDrive.sv|
+!i113 1
+R12
+R13
+ndesired@drive
+veBike
+R0
+R15
+!i10b 1
+!s100 GHDKeUY??MXQSOe0SgbA`1
+R2
+IkIO:zWTU7aJm^=FJcbFd:3
+R3
+S1
+R4
+w1745959697
+8C:/Users/allen/School/ece551/Final-Git/ex22/eBike.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/eBike.sv
+!i122 125
+L0 1 98
+R8
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/eBike.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/eBike.sv|
+!i113 1
+R12
+R13
+ne@bike
+veBike_tb
+R0
+R28
+!i10b 1
+!s100 GdY;g^P[Fm?aBc1cGUFcN0
+R2
+Ingnd^KUKzJGh2U8]Cz4<10
+R3
+S1
+R4
+w1745958411
+8C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv
+!i122 126
+L0 1 210
+R8
+r1
+!s85 0
+31
+R16
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv|
+!i113 1
+R12
+R13
+ne@bike_tb
+veBikePhysics
+R0
+R28
+!i10b 1
+!s100 PNjLQzoiQ__SDogeMQ;GT2
+R2
+IJL>ebcjAT:D];7I7:zLnM1
+R3
+S1
+R4
+w1649791238
+8C:/Users/allen/School/ece551/Final-Git/ex22/eBikePhysics.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/eBikePhysics.sv
+!i122 127
+L0 1 530
+R8
+r1
+!s85 0
+31
+R31
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/eBikePhysics.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/eBikePhysics.sv|
+!i113 1
+R12
+R13
+ne@bike@physics
+vfourteen_counter
+R0
+R1
+!i10b 1
+!s100 b`i`D<3;49g`kA6YBcSBC0
+R2
+IQ8Jn=WYVE2=bf_]8[eJg53
 R3
 S1
 R4
 R5
 R6
 R7
-!i122 9
-L0 4 121
+!i122 119
+L0 22 16
 R8
 r1
 !s85 0
@@ -59,30 +341,513 @@ R11
 !i113 1
 R12
 R13
-nsensor@condition
-vsensorCondition_tb
+vinert_intf
 R0
-R1
+R28
 !i10b 1
-!s100 YUN09j@eFKnd<fUoehDAL0
+!s100 Q9?4BC6J1XNBF4fAYPzlD3
 R2
-I@Q:`ScE=EkK:A[SkH1n;j1
+IQ2<I]Lcc?FP0^lL3ebNE83
 R3
 S1
 R4
-w1745591635
-8/home/vedaant/school_files/spring2025/ECE551/inclass/ex22/sensorCondition_tb.sv
-F/home/vedaant/school_files/spring2025/ECE551/inclass/ex22/sensorCondition_tb.sv
-!i122 10
-L0 1 23
+R5
+R29
+R30
+!i122 128
+L0 61 209
 R8
 r1
 !s85 0
 31
-R9
-!s107 /home/vedaant/school_files/spring2025/ECE551/inclass/ex22/sensorCondition_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/vedaant/school_files/spring2025/ECE551/inclass/ex22/sensorCondition_tb.sv|
+R31
+R32
+R33
+!i113 1
+R12
+R13
+vinertial_integrator
+R0
+R28
+!i10b 1
+!s100 [6z<Zb`Hh??iFaMz_396V0
+R2
+IOef7[KIFE475@Vi9Dlj:A2
+R3
+S1
+R4
+R5
+8C:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv
+!i122 129
+L0 1 106
+R8
+r1
+!s85 0
+31
+R31
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv|
+!i113 1
+R12
+R13
+vINT_synch
+R0
+R28
+!i10b 1
+!s100 43LdWbmSLkNB_`g6e?blA1
+R2
+ID1DAVLGKLE]bT1H5kC>Rn0
+R3
+S1
+R4
+R5
+R29
+R30
+!i122 128
+L0 39 16
+R8
+r1
+!s85 0
+31
+R31
+R32
+R33
+!i113 1
+R12
+R13
+n@i@n@t_synch
+vmonarch_shft
+R0
+R17
+!i10b 1
+!s100 U;HZhEJQ[:4k]4XSQJ[Y_1
+R2
+IBha@IGl87>zgKC;ci[z;X2
+R3
+S1
+R4
+R5
+Z34 8C:/Users/allen/School/ece551/Final-Git/ex22/SPI_mnrch.sv
+Z35 FC:/Users/allen/School/ece551/Final-Git/ex22/SPI_mnrch.sv
+!i122 137
+L0 37 30
+R8
+r1
+!s85 0
+31
+R21
+Z36 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/SPI_mnrch.sv|
+Z37 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/SPI_mnrch.sv|
+!i113 1
+R12
+R13
+vmtr_drv
+R0
+R28
+!i10b 1
+!s100 B8l@]XTT@6eD:H3]4zHIe1
+R2
+IIC^G3:2``Wd4B9?0<Vagj0
+R3
+S1
+R4
+R5
+8C:/Users/allen/School/ece551/Final-Git/ex22/mtr_drv.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/mtr_drv.sv
+!i122 130
+L0 1 49
+R8
+r1
+!s85 0
+31
+R31
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/mtr_drv.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/mtr_drv.sv|
+!i113 1
+R12
+R13
+vnonoverlap
+R0
+R28
+!i10b 1
+!s100 [bn[4@<`P;dGESObX8:Vo3
+R2
+IOV:fRV=bQRh__UOnP1b2Z0
+R3
+S1
+R4
+R5
+8C:/Users/allen/School/ece551/Final-Git/ex22/nonoverlap.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/nonoverlap.sv
+!i122 131
+L0 1 81
+R8
+r1
+!s85 0
+31
+R31
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/nonoverlap.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/nonoverlap.sv|
+!i113 1
+R12
+R13
+vPID
+R0
+R17
+!i10b 1
+!s100 @?haSm^nl;ICUE7j]N2M10
+R2
+IP6@l0?Ygi5b`co>49h@H:1
+R3
+S1
+R4
+R5
+8C:/Users/allen/School/ece551/Final-Git/ex22/PID.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/PID.sv
+!i122 132
+L0 1 97
+R8
+r1
+!s85 0
+31
+R31
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/PID.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/PID.sv|
+!i113 1
+R12
+R13
+n@p@i@d
+vPWM
+R0
+R17
+!i10b 1
+!s100 AZ;bNdD?@b`^QEzFd8N3e3
+R2
+I@5[?Z0K3JU`gEiA<[0NIU0
+R3
+S1
+R4
+R5
+8C:/Users/allen/School/ece551/Final-Git/ex22/PWM.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/PWM.sv
+!i122 133
+L0 1 46
+R8
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/PWM.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/PWM.sv|
+!i113 1
+R12
+R13
+n@p@w@m
+vrst_synch
+R0
+R17
+!i10b 1
+!s100 8D7`ahjH1Zbn@R2<i<U[R1
+R2
+I5Wz>mb@Af^ml[1X_5j2a^1
+R3
+S1
+R4
+R5
+8C:/Users/allen/School/ece551/Final-Git/ex22/rst_synch.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/rst_synch.sv
+!i122 134
+L0 1 22
+R8
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/rst_synch.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/rst_synch.sv|
+!i113 1
+R12
+R13
+vsclk_cntr
+R0
+R17
+!i10b 1
+!s100 ^j]_2G_@Wd7fG_1[_bRF`2
+R2
+I[9i<RKBd_:6zkOnfidPS^1
+R3
+S1
+R4
+R5
+R34
+R35
+!i122 137
+L0 19 17
+R8
+r1
+!s85 0
+31
+R21
+R36
+R37
+!i113 1
+R12
+R13
+vsensorCondition
+R0
+R17
+!i10b 1
+!s100 2_;gH4PRP6KK1ALmSV:A;0
+R2
+I[<m`Z4<lB@2c[2Smoc;613
+R3
+S1
+R4
+R18
+R19
+R20
+!i122 135
+L0 4 117
+R8
+r1
+!s85 0
+31
+R21
+R22
+R23
+!i113 1
+R12
+R13
+nsensor@condition
+vsensorCondition_tb
+R0
+R17
+!i10b 1
+!s100 5cQ=k`4F;hj_8ceG0SJT20
+R2
+IC2:JEe2XiEzdg8:IHJW<B2
+R3
+S1
+R4
+R5
+8C:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition_tb.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition_tb.sv
+!i122 136
+L0 1 53
+R8
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition_tb.sv|
 !i113 1
 R12
 R13
 nsensor@condition_tb
+vshift_cntr
+R0
+R17
+!i10b 1
+!s100 oo5JF539Hc[JJh<gJ=1P82
+R2
+IkL8HKP^>U@dIn_J3?2okG3
+R3
+S1
+R4
+R5
+R34
+R35
+!i122 137
+L0 1 17
+R8
+r1
+!s85 0
+31
+R21
+R36
+R37
+!i113 1
+R12
+R13
+vSPI_ADC128S
+R0
+Z38 !s110 1745961184
+!i10b 1
+!s100 93oj0i;UV@::cHMPGHMJ>1
+R2
+IQoD7Pej5EaK5TD600_;390
+R3
+S1
+R4
+w1649791252
+8C:/Users/allen/School/ece551/Final-Git/ex22/SPI_ADC128S.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/SPI_ADC128S.sv
+!i122 141
+L0 1 140
+R8
+r1
+!s85 0
+31
+Z39 !s108 1745961184.000000
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/SPI_ADC128S.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/SPI_ADC128S.sv|
+!i113 1
+R12
+R13
+n@s@p@i_@a@d@c128@s
+vSPI_mnrch
+R0
+R17
+!i10b 1
+!s100 RP6bl084I?AE_E]mcjZ^H1
+R2
+I[LiDXWm?A?Af:=Y[BThFi3
+R3
+S1
+R4
+R5
+R34
+R35
+!i122 137
+L0 70 132
+R8
+r1
+!s85 0
+31
+R21
+R36
+R37
+!i113 1
+R12
+R13
+n@s@p@i_mnrch
+vtelemetry
+R0
+R17
+!i10b 1
+!s100 `<M^RdKeOWha8Ck0hCe[Q1
+R2
+I=<jKI^jNeH`j2zg5WI4de1
+R3
+S1
+R4
+R5
+R24
+R25
+!i122 138
+L0 27 87
+R8
+r1
+!s85 0
+31
+R21
+R26
+R27
+!i113 1
+R12
+R13
+vtgglMd
+R0
+R38
+!i10b 1
+!s100 Gj:<KWU@U7nBY4co:g^5I3
+R2
+I;m<Uz3h59D:<kNC?:j?]<2
+R3
+S1
+R4
+R5
+8C:/Users/allen/School/ece551/Final-Git/ex22/tgglMd.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/tgglMd.sv
+!i122 139
+L0 1 50
+R8
+r1
+!s85 0
+31
+R39
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/tgglMd.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/tgglMd.sv|
+!i113 1
+R12
+R13
+ntggl@md
+vtmr_16b
+R0
+R28
+!i10b 1
+!s100 n99oRz4Ajz<OGEcL?VG:93
+R2
+I_^c4USF5KWH@d9=U;alko1
+R3
+S1
+R4
+R5
+R29
+R30
+!i122 128
+L0 20 15
+R8
+r1
+!s85 0
+31
+R31
+R32
+R33
+!i113 1
+R12
+R13
+vUART_rcv
+R0
+R38
+!i10b 1
+!s100 e?H4N6Ja[5LK1c7S6k>G20
+R2
+I]Tf0CJO`<lLY3E?8BMmfi2
+R3
+S1
+R4
+w1649791264
+8C:/Users/allen/School/ece551/Final-Git/ex22/UART_rcv.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/UART_rcv.sv
+!i122 142
+R14
+R8
+r1
+!s85 0
+31
+R39
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/UART_rcv.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/UART_rcv.sv|
+!i113 1
+R12
+R13
+n@u@a@r@t_rcv
+vUART_tx
+R0
+R38
+!i10b 1
+!s100 :Q@`FTZ_K_VTzGPje<fZh0
+R2
+ICEbATh=CBHQGC6JGGnD:52
+R3
+S1
+R4
+R5
+8C:/Users/allen/School/ece551/Final-Git/ex22/UART_tx.sv
+FC:/Users/allen/School/ece551/Final-Git/ex22/UART_tx.sv
+!i122 140
+R14
+R8
+r1
+!s85 0
+31
+R39
+!s107 C:/Users/allen/School/ece551/Final-Git/ex22/UART_tx.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/UART_tx.sv|
+!i113 1
+R12
+R13
+n@u@a@r@t_tx
