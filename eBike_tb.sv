@@ -119,7 +119,15 @@ module eBike_tb();
   task telemetryTest();
         // We don't stimulate current in our TB, so just visually check for reasonable waveforms
         BATT = $random()%13'h1000;
-        TORQUE = $random()%13'h1000; 
+        TORQUE = $random()%13'h1000;
+        // First cycle of telemetry reads will be 0 because of delay in inertial integrator 
+        repeat(8) begin
+          @(posedge rdy);
+          clr_rdy = 1;
+          @(posedge clk);
+          clr_rdy = 0;
+        end
+      
         // BYTE 1 CHECK &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
         @(posedge rdy);
         clr_rdy = 1;
@@ -142,8 +150,8 @@ module eBike_tb();
         @(posedge rdy);
         clr_rdy = 1;
         if(rx_data != {4'h0, BATT[11:8]}) begin
-            $error("Byte 3 incorrectly recieved!");
-            $stop();
+           $error("Byte 3 incorrectly recieved!");
+           $stop();
         end
         @(posedge clk);
         clr_rdy = 0;
@@ -172,17 +180,17 @@ module eBike_tb();
         @(posedge rdy);
         clr_rdy = 1;
         if(rx_data != {4'h0, TORQUE[11:8]}) begin
-            $error("Byte 7 incorrectly recieved!");
-            $stop();
+           $error("Byte 7 incorrectly recieved!");
+           $stop();
         end
         @(posedge clk);
         clr_rdy = 0;
         // BYTE 8 CHECK &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
         @(posedge rdy);
         clr_rdy = 1;
-        if(rx_data != TORQUE[7:0]) begin
-            $error("Byte 8 incorrectly recieved!");
-            $stop();
+        if((rx_data > (TORQUE[7:0] + 8'd2)) | (rx_data < (TORQUE[7:0] - 8'd2))) begin // When the TORQUE is held constant, avg should be within 1-2 of the held value
+           $error("Byte 8 incorrectly recieved!");
+           $stop();
         end
         @(posedge clk);
         clr_rdy = 0;
