@@ -11,7 +11,7 @@ cModel Technology
 dC:/Users/allen/School/ece551/Exercise22
 vA2D_intf
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 !s110 1746031859
+Z1 !s110 1746141981
 !i10b 1
 !s100 7omfR3ZJ:<^eRoa5[A=[33
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -22,13 +22,13 @@ Z4 dC:/Users/allen/School/ece551/Final-Git/ex22
 Z5 w1745957857
 Z6 8C:/Users/allen/School/ece551/Final-Git/ex22/A2D_intf.sv
 Z7 FC:/Users/allen/School/ece551/Final-Git/ex22/A2D_intf.sv
-!i122 383
+!i122 792
 L0 51 173
 Z8 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z9 !s108 1746031858.000000
+Z9 !s108 1746141981.000000
 Z10 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/A2D_intf.sv|
 Z11 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/A2D_intf.sv|
 !i113 1
@@ -48,13 +48,13 @@ R4
 w1649791202
 8C:/Users/allen/School/ece551/Final-Git/ex22/AnalogModel.sv
 FC:/Users/allen/School/ece551/Final-Git/ex22/AnalogModel.sv
-!i122 384
+!i122 793
 Z14 L0 1 111
 R8
 r1
 !s85 0
 31
-Z15 !s108 1746031859.000000
+R9
 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/AnalogModel.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/AnalogModel.sv|
 !i113 1
@@ -63,7 +63,7 @@ R13
 n@analog@model
 vbrushless
 R0
-R1
+Z15 !s110 1746141982
 !i10b 1
 !s100 cDC`dW0IcLLdm=hG2:5Ol1
 R2
@@ -74,13 +74,13 @@ R4
 R5
 8C:/Users/allen/School/ece551/Final-Git/ex22/brushless.sv
 FC:/Users/allen/School/ece551/Final-Git/ex22/brushless.sv
-!i122 385
+!i122 794
 L0 1 126
 R8
 r1
 !s85 0
 31
-R15
+R9
 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/brushless.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/brushless.sv|
 !i113 1
@@ -88,7 +88,7 @@ R12
 R13
 vcadence_filt
 R0
-R1
+R15
 !i10b 1
 !s100 aGfU6gLLAP9_kgFbiIAaR2
 R2
@@ -97,23 +97,23 @@ R3
 S1
 R4
 R5
-8C:/Users/allen/School/ece551/Final-Git/ex22/cadence_filt.sv
-FC:/Users/allen/School/ece551/Final-Git/ex22/cadence_filt.sv
-!i122 386
+Z16 8C:/Users/allen/School/ece551/Final-Git/ex22/cadence_filt.sv
+Z17 FC:/Users/allen/School/ece551/Final-Git/ex22/cadence_filt.sv
+!i122 795
 L0 1 84
 R8
 r1
 !s85 0
 31
-R15
-!s107 C:/Users/allen/School/ece551/Final-Git/ex22/cadence_filt.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/cadence_filt.sv|
+Z18 !s108 1746141982.000000
+Z19 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/cadence_filt.sv|
+Z20 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/cadence_filt.sv|
 !i113 1
 R12
 R13
 vcadence_LU
 R0
-R1
+R15
 !i10b 1
 !s100 BTkJ1lgHmZ_j@E3b@lDg@0
 R2
@@ -124,13 +124,13 @@ R4
 R5
 8C:/Users/allen/School/ece551/Final-Git/ex22/cadence_LU.sv
 FC:/Users/allen/School/ece551/Final-Git/ex22/cadence_LU.sv
-!i122 387
+!i122 796
 L0 1 237
 R8
 r1
 !s85 0
 31
-R15
+R18
 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/cadence_LU.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/cadence_LU.sv|
 !i113 1
@@ -139,32 +139,32 @@ R13
 ncadence_@l@u
 vcadence_meas
 R0
-Z16 !s110 1746031862
+Z21 !s110 1746141986
 !i10b 1
-!s100 0hFH6BWJ;E^AmLeLmh][81
+!s100 jYKKEIfLMW?UdzcXLaKHE0
 R2
-Im=9QGiFXfZlXHAUG_nz0U0
+I=UE<Ve?o[d[3AY=mUbz^Z1
 R3
 S1
 R4
-Z17 w1745961172
-Z18 8C:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition.sv
-Z19 FC:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition.sv
-!i122 399
-L0 122 153
+Z22 w1746140811
+Z23 8C:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition.sv
+Z24 FC:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition.sv
+!i122 808
+L0 144 63
 R8
 r1
 !s85 0
 31
-Z20 !s108 1746031862.000000
-Z21 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition.sv|
-Z22 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition.sv|
+Z25 !s108 1746141986.000000
+Z26 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition.sv|
+Z27 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition.sv|
 !i113 1
 R12
 R13
 vcounter_20b
 R0
-R16
+Z28 !s110 1746141987
 !i10b 1
 !s100 VK6MPh;SgNK525YYOCJ@32
 R2
@@ -173,23 +173,23 @@ R3
 S1
 R4
 R5
-Z23 8C:/Users/allen/School/ece551/Final-Git/ex22/telemetry.sv
-Z24 FC:/Users/allen/School/ece551/Final-Git/ex22/telemetry.sv
-!i122 402
+Z29 8C:/Users/allen/School/ece551/Final-Git/ex22/telemetry.sv
+Z30 FC:/Users/allen/School/ece551/Final-Git/ex22/telemetry.sv
+!i122 811
 L0 5 17
 R8
 r1
 !s85 0
 31
-R20
-Z25 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/telemetry.sv|
-Z26 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/telemetry.sv|
+Z31 !s108 1746141987.000000
+Z32 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/telemetry.sv|
+Z33 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/telemetry.sv|
 !i113 1
 R12
 R13
 vd_flipflop
 R0
-Z27 !s110 1746031860
+Z34 !s110 1746141984
 !i10b 1
 !s100 gfk:CmmRH2kaYVYUe83NJ2
 R2
@@ -198,23 +198,23 @@ R3
 S1
 R4
 R5
-Z28 8C:/Users/allen/School/ece551/Final-Git/ex22/inert_intf.sv
-Z29 FC:/Users/allen/School/ece551/Final-Git/ex22/inert_intf.sv
-!i122 392
+Z35 8C:/Users/allen/School/ece551/Final-Git/ex22/inert_intf.sv
+Z36 FC:/Users/allen/School/ece551/Final-Git/ex22/inert_intf.sv
+!i122 801
 L0 4 12
 R8
 r1
 !s85 0
 31
-Z30 !s108 1746031860.000000
-Z31 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/inert_intf.sv|
-Z32 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/inert_intf.sv|
+Z37 !s108 1746141984.000000
+Z38 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/inert_intf.sv|
+Z39 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/inert_intf.sv|
 !i113 1
 R12
 R13
 vdesiredDrive
 R0
-R27
+Z40 !s110 1746141983
 !i10b 1
 !s100 O6h`@:;jA=GSMi4hecZ_N2
 R2
@@ -225,22 +225,47 @@ R4
 R5
 8C:/Users/allen/School/ece551/Final-Git/ex22/desiredDrive.sv
 FC:/Users/allen/School/ece551/Final-Git/ex22/desiredDrive.sv
-!i122 388
+!i122 797
 L0 1 66
 R8
 r1
 !s85 0
 31
-R15
+R18
 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/desiredDrive.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/desiredDrive.sv|
 !i113 1
 R12
 R13
 ndesired@drive
+vdff
+R0
+Z41 !s110 1746136781
+!i10b 1
+!s100 :fjR;oG936aj64;`cJbz10
+R2
+IbKB>C8c]m2@A2>A8XlbiK3
+R3
+S1
+R4
+Z42 w1746136529
+R16
+R17
+!i122 579
+L0 4 14
+R8
+r1
+!s85 0
+31
+Z43 !s108 1746136781.000000
+R19
+R20
+!i113 1
+R12
+R13
 veBike
 R0
-R27
+R40
 !i10b 1
 !s100 GHDKeUY??MXQSOe0SgbA`1
 R2
@@ -248,16 +273,16 @@ IkIO:zWTU7aJm^=FJcbFd:3
 R3
 S1
 R4
-w1745959697
+w1746134580
 8C:/Users/allen/School/ece551/Final-Git/ex22/eBike.sv
 FC:/Users/allen/School/ece551/Final-Git/ex22/eBike.sv
-!i122 389
+!i122 798
 L0 1 98
 R8
 r1
 !s85 0
 31
-R30
+Z44 !s108 1746141983.000000
 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/eBike.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/eBike.sv|
 !i113 1
@@ -266,24 +291,24 @@ R13
 ne@bike
 veBike_tb
 R0
-!s110 1746128473
+R40
 !i10b 1
-!s100 jU@ZOc;FINl7Odi7CKc7H3
+!s100 @o:VeEME3oR3JS@H`NSEV1
 R2
-I=N>TjUh_ZMNUo;n[z:]4i1
+I8QnKLK`jDIMeoa8eV;d023
 R3
 S1
 R4
-w1746033096
+w1746140448
 8C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv
 FC:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv
-!i122 407
-L0 1 249
+!i122 799
+L0 3 250
 R8
 r1
 !s85 0
 31
-!s108 1746128473.000000
+R44
 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv|
 !i113 1
@@ -292,7 +317,7 @@ R13
 ne@bike_tb
 veBikePhysics
 R0
-R27
+R34
 !i10b 1
 !s100 PNjLQzoiQ__SDogeMQ;GT2
 R2
@@ -303,13 +328,13 @@ R4
 w1649791238
 8C:/Users/allen/School/ece551/Final-Git/ex22/eBikePhysics.sv
 FC:/Users/allen/School/ece551/Final-Git/ex22/eBikePhysics.sv
-!i122 391
+!i122 800
 L0 1 530
 R8
 r1
 !s85 0
 31
-R30
+R44
 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/eBikePhysics.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/eBikePhysics.sv|
 !i113 1
@@ -329,7 +354,7 @@ R4
 R5
 R6
 R7
-!i122 383
+!i122 792
 L0 22 16
 R8
 r1
@@ -343,7 +368,7 @@ R12
 R13
 vinert_intf
 R0
-R27
+R34
 !i10b 1
 !s100 Q9?4BC6J1XNBF4fAYPzlD3
 R2
@@ -352,23 +377,23 @@ R3
 S1
 R4
 R5
-R28
-R29
-!i122 392
+R35
+R36
+!i122 801
 L0 61 209
 R8
 r1
 !s85 0
 31
-R30
-R31
-R32
+R37
+R38
+R39
 !i113 1
 R12
 R13
 vinertial_integrator
 R0
-Z33 !s110 1746031861
+R34
 !i10b 1
 !s100 [6z<Zb`Hh??iFaMz_396V0
 R2
@@ -379,13 +404,13 @@ R4
 R5
 8C:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv
 FC:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv
-!i122 393
-Z34 L0 1 106
+!i122 802
+Z45 L0 1 106
 R8
 r1
 !s85 0
 31
-R30
+R37
 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv|
 !i113 1
@@ -393,7 +418,7 @@ R12
 R13
 vINT_synch
 R0
-R27
+R34
 !i10b 1
 !s100 43LdWbmSLkNB_`g6e?blA1
 R2
@@ -402,24 +427,24 @@ R3
 S1
 R4
 R5
-R28
-R29
-!i122 392
+R35
+R36
+!i122 801
 L0 39 16
 R8
 r1
 !s85 0
 31
-R30
-R31
-R32
+R37
+R38
+R39
 !i113 1
 R12
 R13
 n@i@n@t_synch
 vmonarch_shft
 R0
-R16
+R21
 !i10b 1
 !s100 U;HZhEJQ[:4k]4XSQJ[Y_1
 R2
@@ -428,23 +453,23 @@ R3
 S1
 R4
 R5
-Z35 8C:/Users/allen/School/ece551/Final-Git/ex22/SPI_mnrch.sv
-Z36 FC:/Users/allen/School/ece551/Final-Git/ex22/SPI_mnrch.sv
-!i122 401
+Z46 8C:/Users/allen/School/ece551/Final-Git/ex22/SPI_mnrch.sv
+Z47 FC:/Users/allen/School/ece551/Final-Git/ex22/SPI_mnrch.sv
+!i122 810
 L0 37 30
 R8
 r1
 !s85 0
 31
-R20
-Z37 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/SPI_mnrch.sv|
-Z38 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/SPI_mnrch.sv|
+R25
+Z48 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/SPI_mnrch.sv|
+Z49 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/SPI_mnrch.sv|
 !i113 1
 R12
 R13
 vmtr_drv
 R0
-R33
+R34
 !i10b 1
 !s100 B8l@]XTT@6eD:H3]4zHIe1
 R2
@@ -455,13 +480,13 @@ R4
 R5
 8C:/Users/allen/School/ece551/Final-Git/ex22/mtr_drv.sv
 FC:/Users/allen/School/ece551/Final-Git/ex22/mtr_drv.sv
-!i122 394
+!i122 803
 L0 1 49
 R8
 r1
 !s85 0
 31
-Z39 !s108 1746031861.000000
+R37
 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/mtr_drv.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/mtr_drv.sv|
 !i113 1
@@ -469,7 +494,7 @@ R12
 R13
 vnonoverlap
 R0
-R33
+Z50 !s110 1746141985
 !i10b 1
 !s100 [bn[4@<`P;dGESObX8:Vo3
 R2
@@ -480,13 +505,13 @@ R4
 R5
 8C:/Users/allen/School/ece551/Final-Git/ex22/nonoverlap.sv
 FC:/Users/allen/School/ece551/Final-Git/ex22/nonoverlap.sv
-!i122 395
+!i122 804
 L0 1 81
 R8
 r1
 !s85 0
 31
-R39
+R37
 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/nonoverlap.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/nonoverlap.sv|
 !i113 1
@@ -494,24 +519,24 @@ R12
 R13
 vPID
 R0
-R33
+R50
 !i10b 1
-!s100 _FYj`;jGbKd<]Gh`[Lz<V1
+!s100 GL96ILFX^N<cSKI[Hj0lh2
 R2
-IDg6HY3=R57SZmZlg@EZ320
+I>OSoLTU:dNE3IVAiOP>`Q3
 R3
 S1
 R4
-w1745961247
+w1746141837
 8C:/Users/allen/School/ece551/Final-Git/ex22/PID.sv
 FC:/Users/allen/School/ece551/Final-Git/ex22/PID.sv
-!i122 396
-R34
+!i122 805
+R45
 R8
 r1
 !s85 0
 31
-R39
+Z51 !s108 1746141985.000000
 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/PID.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/PID.sv|
 !i113 1
@@ -520,7 +545,7 @@ R13
 n@p@i@d
 vPWM
 R0
-R33
+R50
 !i10b 1
 !s100 AZ;bNdD?@b`^QEzFd8N3e3
 R2
@@ -531,13 +556,13 @@ R4
 R5
 8C:/Users/allen/School/ece551/Final-Git/ex22/PWM.sv
 FC:/Users/allen/School/ece551/Final-Git/ex22/PWM.sv
-!i122 397
+!i122 806
 L0 1 46
 R8
 r1
 !s85 0
 31
-R39
+R51
 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/PWM.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/PWM.sv|
 !i113 1
@@ -546,7 +571,7 @@ R13
 n@p@w@m
 vrst_synch
 R0
-R16
+R21
 !i10b 1
 !s100 8D7`ahjH1Zbn@R2<i<U[R1
 R2
@@ -557,13 +582,13 @@ R4
 R5
 8C:/Users/allen/School/ece551/Final-Git/ex22/rst_synch.sv
 FC:/Users/allen/School/ece551/Final-Git/ex22/rst_synch.sv
-!i122 398
+!i122 807
 L0 1 22
 R8
 r1
 !s85 0
 31
-R39
+R51
 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/rst_synch.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/rst_synch.sv|
 !i113 1
@@ -571,7 +596,7 @@ R12
 R13
 vsclk_cntr
 R0
-R16
+R21
 !i10b 1
 !s100 ^j]_2G_@Wd7fG_1[_bRF`2
 R2
@@ -580,49 +605,49 @@ R3
 S1
 R4
 R5
-R35
-R36
-!i122 401
+R46
+R47
+!i122 810
 L0 19 17
 R8
 r1
 !s85 0
 31
-R20
-R37
-R38
+R25
+R48
+R49
 !i113 1
 R12
 R13
 vsensorCondition
 R0
-R16
+R21
 !i10b 1
-!s100 2_;gH4PRP6KK1ALmSV:A;0
+!s100 7C;bnIJG==8k9^U2GhSTz2
 R2
-I[<m`Z4<lB@2c[2Smoc;613
+IeZGZ0fBIZ4:CJkI9T:`]81
 R3
 S1
 R4
-R17
-R18
-R19
-!i122 399
-L0 4 117
+R22
+R23
+R24
+!i122 808
+L0 1 141
 R8
 r1
 !s85 0
 31
-R20
-R21
-R22
+R25
+R26
+R27
 !i113 1
 R12
 R13
 nsensor@condition
 vsensorCondition_tb
 R0
-R16
+R21
 !i10b 1
 !s100 5cQ=k`4F;hj_8ceG0SJT20
 R2
@@ -633,13 +658,13 @@ R4
 R5
 8C:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition_tb.sv
 FC:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition_tb.sv
-!i122 400
+!i122 809
 L0 1 53
 R8
 r1
 !s85 0
 31
-R20
+R25
 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/sensorCondition_tb.sv|
 !i113 1
@@ -648,7 +673,7 @@ R13
 nsensor@condition_tb
 vshift_cntr
 R0
-R16
+R21
 !i10b 1
 !s100 oo5JF539Hc[JJh<gJ=1P82
 R2
@@ -657,23 +682,23 @@ R3
 S1
 R4
 R5
-R35
-R36
-!i122 401
+R46
+R47
+!i122 810
 L0 1 17
 R8
 r1
 !s85 0
 31
-R20
-R37
-R38
+R25
+R48
+R49
 !i113 1
 R12
 R13
 vSPI_ADC128S
 R0
-Z40 !s110 1746031863
+Z52 !s110 1746141988
 !i10b 1
 !s100 93oj0i;UV@::cHMPGHMJ>1
 R2
@@ -684,13 +709,13 @@ R4
 w1649791252
 8C:/Users/allen/School/ece551/Final-Git/ex22/SPI_ADC128S.sv
 FC:/Users/allen/School/ece551/Final-Git/ex22/SPI_ADC128S.sv
-!i122 405
+!i122 814
 L0 1 140
 R8
 r1
 !s85 0
 31
-Z41 !s108 1746031863.000000
+R31
 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/SPI_ADC128S.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/SPI_ADC128S.sv|
 !i113 1
@@ -699,7 +724,7 @@ R13
 n@s@p@i_@a@d@c128@s
 vSPI_mnrch
 R0
-R16
+R28
 !i10b 1
 !s100 RP6bl084I?AE_E]mcjZ^H1
 R2
@@ -708,24 +733,49 @@ R3
 S1
 R4
 R5
-R35
-R36
-!i122 401
+R46
+R47
+!i122 810
 L0 70 132
 R8
 r1
 !s85 0
 31
-R20
-R37
-R38
+R25
+R48
+R49
 !i113 1
 R12
 R13
 n@s@p@i_mnrch
+vstability_counter
+R0
+R41
+!i10b 1
+!s100 >k?d8g4]Dd6n9??b32ga02
+R2
+II`:9P9jJM5IX=VigUim^30
+R3
+S1
+R4
+R42
+R16
+R17
+!i122 579
+L0 23 21
+R8
+r1
+!s85 0
+31
+R43
+R19
+R20
+!i113 1
+R12
+R13
 vtelemetry
 R0
-R16
+R28
 !i10b 1
 !s100 `<M^RdKeOWha8Ck0hCe[Q1
 R2
@@ -734,23 +784,23 @@ R3
 S1
 R4
 R5
-R23
-R24
-!i122 402
+R29
+R30
+!i122 811
 L0 27 87
 R8
 r1
 !s85 0
 31
-R20
-R25
-R26
+R31
+R32
+R33
 !i113 1
 R12
 R13
 vtgglMd
 R0
-R16
+R28
 !i10b 1
 !s100 Gj:<KWU@U7nBY4co:g^5I3
 R2
@@ -761,13 +811,13 @@ R4
 R5
 8C:/Users/allen/School/ece551/Final-Git/ex22/tgglMd.sv
 FC:/Users/allen/School/ece551/Final-Git/ex22/tgglMd.sv
-!i122 403
+!i122 812
 L0 1 50
 R8
 r1
 !s85 0
 31
-R20
+R31
 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/tgglMd.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/tgglMd.sv|
 !i113 1
@@ -776,7 +826,7 @@ R13
 ntggl@md
 vtmr_16b
 R0
-R27
+R34
 !i10b 1
 !s100 n99oRz4Ajz<OGEcL?VG:93
 R2
@@ -785,23 +835,23 @@ R3
 S1
 R4
 R5
-R28
-R29
-!i122 392
+R35
+R36
+!i122 801
 L0 20 15
 R8
 r1
 !s85 0
 31
-R30
-R31
-R32
+R37
+R38
+R39
 !i113 1
 R12
 R13
 vUART_rcv
 R0
-R40
+R52
 !i10b 1
 !s100 e?H4N6Ja[5LK1c7S6k>G20
 R2
@@ -812,13 +862,13 @@ R4
 w1745968985
 8C:/Users/allen/School/ece551/Final-Git/ex22/UART_rcv.sv
 FC:/Users/allen/School/ece551/Final-Git/ex22/UART_rcv.sv
-!i122 406
+!i122 815
 R14
 R8
 r1
 !s85 0
 31
-R41
+!s108 1746141988.000000
 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/UART_rcv.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/UART_rcv.sv|
 !i113 1
@@ -827,7 +877,7 @@ R13
 n@u@a@r@t_rcv
 vUART_tx
 R0
-R40
+R28
 !i10b 1
 !s100 :Q@`FTZ_K_VTzGPje<fZh0
 R2
@@ -838,13 +888,13 @@ R4
 R5
 8C:/Users/allen/School/ece551/Final-Git/ex22/UART_tx.sv
 FC:/Users/allen/School/ece551/Final-Git/ex22/UART_tx.sv
-!i122 404
+!i122 813
 R14
 R8
 r1
 !s85 0
 31
-R41
+R31
 !s107 C:/Users/allen/School/ece551/Final-Git/ex22/UART_tx.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/allen/School/ece551/Final-Git/ex22/UART_tx.sv|
 !i113 1

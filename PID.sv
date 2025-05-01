@@ -30,7 +30,7 @@ logic pos_ov;                       //Used to determine if positive overflow occ
 logic [11:0] i_term;                // will hold final I term
 logic signed [13:0] p_term;         // will hold final P term 
 
-logic drv_mag1; 
+logic [11:0] drv_mag1; 
 
 //accumalator flop 
 always_ff @(posedge clk, negedge rst_n) begin 

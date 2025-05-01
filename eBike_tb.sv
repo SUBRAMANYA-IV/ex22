@@ -81,11 +81,7 @@ module eBike_tb();
   //////////////////////////
   initial begin
     init();
-    telemetryTest();
-	init();
-	torqueTest();
-    $display("Yahoo! All tests passed!");
-    $stop();
+    torqueTest();
   end
   
   ///////////////////
@@ -97,8 +93,13 @@ module eBike_tb();
   ///////////////////////
   // Generate cadence //
   /////////////////////
-  always
-    #500 cadence = ~cadence; // TODO: allow cadence to be modified
+  always begin
+    repeat(2048) begin
+      @(posedge clk);
+    end
+    cadence = ~cadence;
+  end
+    
 
   
   //maybe use a task to change the frequency of cadence?

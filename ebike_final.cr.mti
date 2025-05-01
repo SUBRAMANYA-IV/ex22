@@ -6,19 +6,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	sensorCondition
 
-} {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/SPI_ADC128S.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/SPI_ADC128S.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module SPI_ADC128S
-
-Top level modules:
-	SPI_ADC128S
-
 } {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/cadence_filt.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/cadence_filt.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module cadence_filt
 
 Top level modules:
 	cadence_filt
+
+} {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/SPI_ADC128S.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/SPI_ADC128S.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module SPI_ADC128S
+
+Top level modules:
+	SPI_ADC128S
 
 } {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/inert_intf.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/inert_intf.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -68,13 +68,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	nonoverlap
-
-} {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/PID.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/PID.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module PID
-
-Top level modules:
-	PID
 
 } {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/UART_rcv.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/UART_rcv.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -134,6 +127,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	AnalogModel
+
+} {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module eBike_tb
+
+Top level modules:
+	eBike_tb
 
 } {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/rst_synch.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/rst_synch.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
