@@ -76,14 +76,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	PID
 
-} {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv {2 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module inertial_integrator
-** Warning: C:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv(32): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-
-Top level modules:
-	inertial_integrator
-
 } {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/UART_rcv.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/UART_rcv.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module UART_rcv
@@ -97,6 +89,14 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	sensorCondition_tb
+
+} {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv {2 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module inertial_integrator
+** Warning: C:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv(32): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	inertial_integrator
 
 } {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/A2D_intf.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/A2D_intf.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

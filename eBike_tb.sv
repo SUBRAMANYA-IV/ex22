@@ -73,7 +73,7 @@ module eBike_tb();
   //////////////////////////
   initial begin
     init();
-    telemetryTest();
+    inclineTest();
     $display("Yahoo! All tests passed!");
     $stop();
   end
@@ -128,7 +128,7 @@ module eBike_tb();
           clr_rdy = 0;
         end
       
-        // BYTE 1 CHECK &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+        // BYTE 1 CHECK &&&&&&&&&&&/&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
         @(posedge rdy);
         clr_rdy = 1;
         if(rx_data != 8'hAA) begin
@@ -197,9 +197,44 @@ module eBike_tb();
   endtask
 
   task torqueTest();
+    TORQUE=12'h500;
+    //just wait for a bunch of clock cyles to observe the thing?
+    repeat(1000000)begin
+      @(posedge clk) begin
+      end
+    end
+
+    TORQUE=12'h000;
+    //just wait for a bunch of clock cyles to observe the thing?
+    repeat(1000000)begin
+      @(posedge clk) begin
+      end
+    end
+
+    TORQUE=12'h700;
+    //just wait for a bunch of clock cyles to observe the thing?
+    repeat(1000000)begin
+      @(posedge clk) begin
+      end
+    end
   endtask
 
+  /**
+  * Modify YAW_RT and check that our current increases/decreases
+  */
   task inclineTest();
+    TORQUE = 12'h500;
+    // keep incline at 0 for 1M clock cycles
+    //repeat(1000000)
+    //  @(posedge clk);
+    // set incline to steep upward hill, current should increase
+    YAW_RT = 16'h2000;
+    repeat(1000000)
+      @(posedge clk);
+    // set incline to steep downward hill, current should decrease
+    YAW_RT = 16'hE000;
+    repeat(1000000)
+      @(posedge clk);
   endtask
 
   task tgglMdTest();

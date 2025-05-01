@@ -1,6 +1,7 @@
+# Compile of eBike_tb.sv was successful.
 vsim -gui work.eBike_tb
 # vsim -gui work.eBike_tb 
-# Start time: 09:11:05 on Apr 30,2025
+# Start time: 14:42:48 on May 01,2025
 # Loading sv_std.std
 # Loading work.eBike_tb
 # Loading work.AnalogModel
@@ -34,339 +35,29 @@ vsim -gui work.eBike_tb
 # Loading work.tgglMd
 # Loading work.UART_rcv
 # Loading work.d_flipflop
-run -all
-# ** Error: Byte 3 incorrectly recieved!
-#    Time: 256950 ps  Scope: eBike_tb.telemetryTest File: C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv Line: 145
-# ** Note: $stop    : C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv(146)
-#    Time: 256950 ps  Iteration: 3  Instance: /eBike_tb
-# Break in Task telemetryTest at C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv line 146
-add wave -position insertpoint sim:/eBike_tb/telemetryTest/*
-# ** UI-Msg: (vish-4014) No objects found matching '/eBike_tb/telemetryTest/*'.
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/eBike_tb/iDUT/mtrdrv/*
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-add wave -position insertpoint sim:/eBike_tb/telemetryTest/*
-# ** UI-Msg: (vish-4014) No objects found matching '/eBike_tb/telemetryTest/*'.
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
 add wave -position insertpoint  \
-sim:/eBike_tb/clk \
-sim:/eBike_tb/RST_n \
-sim:/eBike_tb/BATT \
-sim:/eBike_tb/BRAKE \
-sim:/eBike_tb/TORQUE \
-sim:/eBike_tb/tgglMd \
-sim:/eBike_tb/YAW_RT \
-sim:/eBike_tb/A2D_SS_n \
-sim:/eBike_tb/A2D_MOSI \
-sim:/eBike_tb/A2D_SCLK \
-sim:/eBike_tb/A2D_MISO \
-sim:/eBike_tb/highGrn \
-sim:/eBike_tb/lowGrn \
-sim:/eBike_tb/highYlw \
-sim:/eBike_tb/lowYlw \
-sim:/eBike_tb/highBlu \
-sim:/eBike_tb/lowBlu \
-sim:/eBike_tb/hallGrn \
-sim:/eBike_tb/hallBlu \
-sim:/eBike_tb/hallYlw \
-sim:/eBike_tb/inertSS_n \
-sim:/eBike_tb/inertSCLK \
-sim:/eBike_tb/inertMISO \
-sim:/eBike_tb/inertMOSI \
-sim:/eBike_tb/inertINT \
-sim:/eBike_tb/cadence \
-sim:/eBike_tb/LED \
-sim:/eBike_tb/coilGY \
-sim:/eBike_tb/coilYB \
-sim:/eBike_tb/coilBG \
-sim:/eBike_tb/curr \
-sim:/eBike_tb/BATT_TX \
-sim:/eBike_tb/TORQUE_TX \
-sim:/eBike_tb/CURR_TX \
-sim:/eBike_tb/vld_TX \
-sim:/eBike_tb/TX_RX \
-sim:/eBike_tb/rx_data \
-sim:/eBike_tb/rdy \
-sim:/eBike_tb/clr_rdy
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# ** Error: Byte 3 incorrectly recieved!
-#    Time: 256950 ps  Scope: eBike_tb.telemetryTest File: C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv Line: 145
-# ** Note: $stop    : C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv(146)
-#    Time: 256950 ps  Iteration: 3  Instance: /eBike_tb
-# Break in Task telemetryTest at C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv line 146
-# Compile of A2D_intf.sv was successful.
-# Compile of AnalogModel.sv was successful.
-# Compile of brushless.sv was successful.
-# Compile of cadence_filt.sv was successful.
-# Compile of cadence_LU.sv was successful.
-# Compile of desiredDrive.sv was successful.
-# Compile of eBike.sv was successful.
-# Compile of eBike_tb.sv was successful.
-# Compile of eBikePhysics.sv was successful.
-# Compile of inert_intf.sv was successful.
-# Compile of inertial_integrator.sv was successful with warnings.
-# Compile of mtr_drv.sv was successful.
-# Compile of nonoverlap.sv was successful.
-# Compile of PID.sv was successful.
-# Compile of PWM.sv was successful.
-# Compile of rst_synch.sv was successful.
-# Compile of sensorCondition.sv was successful.
-# Compile of sensorCondition_tb.sv was successful.
-# Compile of SPI_mnrch.sv was successful.
-# Compile of telemetry.sv was successful.
-# Compile of tgglMd.sv was successful.
-# Compile of UART_tx.sv was successful.
-# Compile of SPI_ADC128S.sv was successful.
-# Compile of UART_rcv.sv was successful.
-# 24 compiles, 0 failed with no errors.
+sim:/eBike_tb/curr
 restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.eBike_tb
-# Loading work.AnalogModel
-# Loading work.SPI_ADC128S
-# Loading work.eBikePhysics
-# Loading work.eBike
-# Loading work.rst_synch
-# Loading work.A2D_intf
-# Loading work.fourteen_counter
-# Loading work.SPI_mnrch
-# Loading work.shift_cntr
-# Loading work.sclk_cntr
-# Loading work.monarch_shft
-# Loading work.sensorCondition
-# Loading work.cadence_filt
-# Loading work.cadence_meas
-# Loading work.cadence_LU
-# Loading work.telemetry
-# Loading work.counter_20b
-# Loading work.UART_tx
-# Loading work.desiredDrive
-# Loading work.PID
-# Loading work.brushless
-# Loading work.mtr_drv
-# Loading work.PWM
-# Loading work.nonoverlap
-# Loading work.inert_intf
-# Loading work.tmr_16b
-# Loading work.INT_synch
-# Loading work.inertial_integrator
-# Loading work.tgglMd
-# Loading work.UART_rcv
-# Loading work.d_flipflop
-run -all
+run
 # GetModuleFileName: The specified module could not be found.
 # 
 # 
+run -all
 # Yahoo! All tests passed!
 # ** Note: $stop    : C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv(78)
-#    Time: 692270 ps  Iteration: 1  Instance: /eBike_tb
+#    Time: 60000010 ps  Iteration: 1  Instance: /eBike_tb
 # Break in Module eBike_tb at C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv line 78
-add wave -position insertpoint sim:/eBike_tb/iDUT/senscond/*
+add wave -position insertpoint sim:/eBike_tb/iDUT/brshlss/*
 restart
 run -all
 # GetModuleFileName: The specified module could not be found.
 # 
 # 
-# Yahoo! All tests passed!
-# ** Note: $stop    : C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv(78)
-#    Time: 692270 ps  Iteration: 1  Instance: /eBike_tb
-# Break in Module eBike_tb at C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv line 78
-# Compile of A2D_intf.sv was successful.
-# Compile of AnalogModel.sv was successful.
-# Compile of brushless.sv was successful.
-# Compile of cadence_filt.sv was successful.
-# Compile of cadence_LU.sv was successful.
-# Compile of desiredDrive.sv was successful.
-# Compile of eBike.sv was successful.
-# Compile of eBike_tb.sv was successful.
-# Compile of eBikePhysics.sv was successful.
-# Compile of inert_intf.sv was successful.
-# Compile of inertial_integrator.sv was successful with warnings.
-# Compile of mtr_drv.sv was successful.
-# Compile of nonoverlap.sv was successful.
-# Compile of PID.sv was successful.
-# Compile of PWM.sv was successful.
-# Compile of rst_synch.sv was successful.
-# Compile of sensorCondition.sv was successful.
-# Compile of sensorCondition_tb.sv was successful.
-# Compile of SPI_mnrch.sv was successful.
-# Compile of telemetry.sv was successful.
-# Compile of tgglMd.sv was successful.
-# Compile of UART_tx.sv was successful.
-# Compile of SPI_ADC128S.sv was successful.
-# Compile of UART_rcv.sv was successful.
-# 24 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.eBike_tb
-# Loading work.AnalogModel
-# Loading work.SPI_ADC128S
-# Loading work.eBikePhysics
-# Loading work.eBike
-# Loading work.rst_synch
-# Loading work.A2D_intf
-# Loading work.fourteen_counter
-# Loading work.SPI_mnrch
-# Loading work.shift_cntr
-# Loading work.sclk_cntr
-# Loading work.monarch_shft
-# Loading work.sensorCondition
-# Loading work.cadence_filt
-# Loading work.cadence_meas
-# Loading work.cadence_LU
-# Loading work.telemetry
-# Loading work.counter_20b
-# Loading work.UART_tx
-# Loading work.desiredDrive
-# Loading work.PID
-# Loading work.brushless
-# Loading work.mtr_drv
-# Loading work.PWM
-# Loading work.nonoverlap
-# Loading work.inert_intf
-# Loading work.tmr_16b
-# Loading work.INT_synch
-# Loading work.inertial_integrator
-# Loading work.tgglMd
-# Loading work.UART_rcv
-# Loading work.d_flipflop
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Compile of A2D_intf.sv was successful.
-# Compile of AnalogModel.sv was successful.
-# Compile of brushless.sv was successful.
-# Compile of cadence_filt.sv was successful.
-# Compile of cadence_LU.sv was successful.
-# Compile of desiredDrive.sv was successful.
-# Compile of eBike.sv was successful.
-# Compile of eBike_tb.sv was successful.
-# Compile of eBikePhysics.sv was successful.
-# Compile of inert_intf.sv was successful.
-# Compile of inertial_integrator.sv was successful with warnings.
-# Compile of mtr_drv.sv was successful.
-# Compile of nonoverlap.sv was successful.
-# Compile of PID.sv was successful.
-# Compile of PWM.sv was successful.
-# Compile of rst_synch.sv was successful.
-# Compile of sensorCondition.sv was successful.
-# Compile of sensorCondition_tb.sv was successful.
-# Compile of SPI_mnrch.sv was successful.
-# Compile of telemetry.sv was successful.
-# Compile of tgglMd.sv was successful.
-# Compile of UART_tx.sv was successful.
-# Compile of SPI_ADC128S.sv was successful.
-# Compile of UART_rcv.sv was successful.
-# 24 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.eBike_tb
-# Loading work.AnalogModel
-# Loading work.SPI_ADC128S
-# Loading work.eBikePhysics
-# Loading work.eBike
-# Loading work.rst_synch
-# Loading work.A2D_intf
-# Loading work.fourteen_counter
-# Loading work.SPI_mnrch
-# Loading work.shift_cntr
-# Loading work.sclk_cntr
-# Loading work.monarch_shft
-# Loading work.sensorCondition
-# Loading work.cadence_filt
-# Loading work.cadence_meas
-# Loading work.cadence_LU
-# Loading work.telemetry
-# Loading work.counter_20b
-# Loading work.UART_tx
-# Loading work.desiredDrive
-# Loading work.PID
-# Loading work.brushless
-# Loading work.mtr_drv
-# Loading work.PWM
-# Loading work.nonoverlap
-# Loading work.inert_intf
-# Loading work.tmr_16b
-# Loading work.INT_synch
-# Loading work.inertial_integrator
-# Loading work.tgglMd
-# Loading work.UART_rcv
-# Loading work.d_flipflop
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# ** Error: Byte 8 incorrectly recieved!
-#    Time: 21663770 ps  Scope: eBike_tb.telemetryTest File: C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv Line: 192
-# ** Note: $stop    : C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv(193)
-#    Time: 21663770 ps  Iteration: 3  Instance: /eBike_tb
-# Break in Task telemetryTest at C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv line 193
-# Compile of A2D_intf.sv was successful.
-# Compile of AnalogModel.sv was successful.
-# Compile of brushless.sv was successful.
-# Compile of cadence_filt.sv was successful.
-# Compile of cadence_LU.sv was successful.
-# Compile of desiredDrive.sv was successful.
-# Compile of eBike.sv was successful.
-# Compile of eBike_tb.sv was successful.
-# Compile of eBikePhysics.sv was successful.
-# Compile of inert_intf.sv was successful.
-# Compile of inertial_integrator.sv was successful with warnings.
-# Compile of mtr_drv.sv was successful.
-# Compile of nonoverlap.sv was successful.
-# Compile of PID.sv was successful.
-# Compile of PWM.sv was successful.
-# Compile of rst_synch.sv was successful.
-# Compile of sensorCondition.sv was successful.
-# Compile of sensorCondition_tb.sv was successful.
-# Compile of SPI_mnrch.sv was successful.
-# Compile of telemetry.sv was successful.
-# Compile of tgglMd.sv was successful.
-# Compile of UART_tx.sv was successful.
-# Compile of SPI_ADC128S.sv was successful.
-# Compile of UART_rcv.sv was successful.
-# 24 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.eBike_tb
-# Loading work.AnalogModel
-# Loading work.SPI_ADC128S
-# Loading work.eBikePhysics
-# Loading work.eBike
-# Loading work.rst_synch
-# Loading work.A2D_intf
-# Loading work.fourteen_counter
-# Loading work.SPI_mnrch
-# Loading work.shift_cntr
-# Loading work.sclk_cntr
-# Loading work.monarch_shft
-# Loading work.sensorCondition
-# Loading work.cadence_filt
-# Loading work.cadence_meas
-# Loading work.cadence_LU
-# Loading work.telemetry
-# Loading work.counter_20b
-# Loading work.UART_tx
-# Loading work.desiredDrive
-# Loading work.PID
-# Loading work.brushless
-# Loading work.mtr_drv
-# Loading work.PWM
-# Loading work.nonoverlap
-# Loading work.inert_intf
-# Loading work.tmr_16b
-# Loading work.INT_synch
-# Loading work.inertial_integrator
-# Loading work.tgglMd
-# Loading work.UART_rcv
-# Loading work.d_flipflop
-run -all
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Yahoo! All tests passed!
-# ** Note: $stop    : C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv(78)
-#    Time: 21663790 ps  Iteration: 1  Instance: /eBike_tb
-# Break in Module eBike_tb at C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv line 78
