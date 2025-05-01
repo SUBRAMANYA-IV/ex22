@@ -1,9 +1,14 @@
 
 #read in files
-read_file -format sverilog {ebike.sv A2D_intf.sv Inert_intf.sv reset_synch.sv desiredDrv.sv cadence_filt.sv Telemetry.sv UART_tx.sv PID.sv brushless.sv MtrDvr.sv PWM.sv PB_intf.sv sensorCondition.sv }
+#read_file -format sverilog {eBike.sv A2D_intf.sv brushless.sv cadence_filt.sv cadence_LU.sv desiredDrive.sv inert_intf.sv inertial_integrator.sv mtr_drv.sv nonoverlap.sv PID.sv PWM.sv rst_synch.sv sensorCondition.sv SPI_mnrch.sv telemetry.sv tgglMd.sv UART_tx.sv }
+read_file -format sverilog {UART_tx.sv SPI_mnrch.sv desiredDrive.sv telemetry.sv cadence_filt.sv cadence_LU.sv PWM.sv rst_synch.sv A2D_intf.sv inertial_integrator.sv inert_intf.sv sensorCondition.sv PID.sv nonoverlap.sv brushless.sv mtr_drv.sv tgglMd.sv eBike.sv }
+
+#-autoread -format sverilog -top eBike 
 
 #set top level for design 
-set current_design ebike
+set current_design eBike
+
+link
 
 #create clk @400 Mhz (period in nanoseconds) 
 create_clock -name "clk" -period 2.5 -waveform {0 1} {clk}
@@ -32,13 +37,14 @@ set_load 50 [all_outputs]
 #set transition time
 set_max_transition 0.20 [current_design] 
 
-set_clock_uncertainty 0.15 clk 
-
 #make guess at parasitic capacitence 
 set_wire_load_model -name 16000 -library saed32lvt_tt0p85v25c
 
 #compile the design
 compile -map_effort high 
+
+set_clock_uncertainty 0.15 clk 
+set_fix_hold clk 
 
 ungroup -all -flatten
 
