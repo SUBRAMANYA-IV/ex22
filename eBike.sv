@@ -9,7 +9,7 @@
   input clk;				// 50MHz clk
   input RST_n;				// active low RST_n from push button
   output A2D_SS_n;			// Slave select to A2D on DE0
-  output A2D_SCLK;			// SPI clock to A2D on DE0
+  output A2D_SCLK;			// SPI clock to A2D on DE0s
   output A2D_MOSI;			// serial output to A2D (what channel to read)
   input A2D_MISO;			// serial input from A2D
   input hallGrn;			// hall position input for "Green" phase

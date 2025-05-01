@@ -1,0 +1,129 @@
+module  (
+    input wire [10:0] duty,
+    input wire [1:0] selGrn,selYlw,selBlu,
+    input wire clk,
+    rst_n,
+    output wire highGrn,
+    lowGrn,
+    highYlw,
+    lowYlw,
+    highBlu,
+    lowBlu,
+    output wire PWM_synch
+);
+
+  //inputs into mtr_drv should be:
+  //duty from brushless
+  //select signals for green, yellow and blue coils
+  //clk and rst_n
+  wire PWM_sig;
+
+  PWM pwm (
+      .clk(clk),
+      .rst_n(rst_n),
+      .duty(duty),
+      .PWM_sig(PWM_sig),
+      .PWM_synch(PWM_synch)
+  );
+
+  //combinational logic for the 3 non_overlap modules
+  logic highInGrn, lowInGrn, highInBlu, lowInBlu, highInYlw, lowInYlw;
+
+  always_comb begin
+
+    case (selGrn)
+      2'b00: begin
+        highInGrn = 1'b0;
+        lowInGrn  = 1'b0;
+      end
+      2'b01: begin
+        highInGrn = ~PWM_sig;
+        lowInGrn  = PWM_sig;
+      end
+      2'b10: begin
+        highInGrn = PWM_sig;
+        lowInGrn  = ~PWM_sig;
+      end
+      2'b11: begin
+        highInGrn = 1'b0;
+        lowInGrn  = PWM_sig;
+      end
+      default: begin
+        highInGrn = 1'b0;
+        lowInGrn  = 1'b0;
+      end
+    endcase
+
+    case (selBlu)
+      2'b00: begin
+        highInBlu = 1'b0;
+        lowInBlu  = 1'b0;
+      end
+      2'b01: begin
+        highInBlu = ~PWM_sig;
+        lowInBlu  = PWM_sig;
+      end
+      2'b10: begin
+        highInBlu = PWM_sig;
+        lowInBlu  = ~PWM_sig;
+      end
+      2'b11: begin
+        highInBlu = 1'b0;
+        lowInBlu  = PWM_sig;
+      end
+      default: begin
+        highInBlu = 1'b0;
+        lowInBlu  = 1'b0;
+      end
+    endcase
+    case (selYlw)
+      2'b00: begin
+        highInYlw = 1'b0;
+        lowInYlw  = 1'b0;
+      end
+      2'b01: begin
+        highInYlw = ~PWM_sig;
+        lowInYlw  = PWM_sig;
+      end
+      2'b10: begin
+        highInYlw = PWM_sig;
+        lowInYlw  = ~PWM_sig;
+      end
+      2'b11: begin
+        highInYlw = 1'b0;
+        lowInYlw  = PWM_sig;
+      end
+      default: begin
+        highInYlw = 1'b0;
+        lowInYlw  = 1'b0;
+      end
+    endcase
+
+  end
+
+  nonoverlap noverlapGrn (
+      .highIn(highInGrn),
+      .lowIn(lowInGrn),
+      .clk(clk),
+      .rst_n(rst_n),
+      .highOut(highGrn),
+      .lowOut(lowGrn)
+  );
+  nonoverlap noverlapBlu (
+      .highIn(highInBlu),
+      .lowIn(lowInBlu),
+      .clk(clk),
+      .rst_n(rst_n),
+      .highOut(highBlu),
+      .lowOut(lowBlu)
+  );
+  nonoverlap noverlapYlw (
+      .highIn(highInYlw),
+      .lowIn(lowInYlw),
+      .clk(clk),
+      .rst_n(rst_n),
+      .highOut(highYlw),
+      .lowOut(lowYlw)
+  );
+
+endmodule

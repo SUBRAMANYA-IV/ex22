@@ -142,61 +142,6 @@ else
    assign THIRD_SEC = THIRD_SEC_REAL;
 endgenerate
 
-/*
-
-
-
-//equals block for THIRD_SEC
-always_comb begin
-    if (third_sec_cnt == THIRD_SEC) begin
-        third_sec_equals = 1'b1;
-    end else begin
-        third_sec_equals = 1'b0;
-    end
-end
-
-//assign capture_per
-
-//assign third_sec_cnt (value stored in first flop)
-always_ff @(posedge clk or negedge rst_n) begin
-    if (!rst_n) 
-        third_sec_cnt <= 24'h0;
-    else if (cadence_rise) 
-        third_sec_cnt <= 24'h0;
-    else if (!third_sec_equals) 
-        third_sec_cnt <= third_sec_cnt + 1;
-    else
-        third_sec_cnt <= third_sec_cnt;
-end
-    
-*/
-// rising edge detection for cadence filt
-
-
-
-
-
-//on the rising edge of cadence_filt, a 24 bit timer is cleared,
-//BUT its upper 8 bits are captured (or bits [14:7) if FAST_SIM)
-//are captured in an 8 bit register that forms cadence_per
-
-
-/*
-If the 24-bit timer gets to THIRD_SEC then the timer is frozen at that value and the value is
-captured in the 8-bit cadence_per register. If this value equals THIRD_SEC_UPPER then
-the not_pedaling signal is asserted (if no pulses were recorded in 1/3 of second then it is
-assumed the rider is not pedaling).
-*/
-
-/*
-A parameter FAST_SIM is used for accelerated simulations and significantly shortens both
-the 1/3 second period (THIRD_SEC) and also grabs lower bits (14:7]) of the 24-bit counter
-to serve as cadence_per.
-• cadence_per register resets to THIRD_SEC_UPPER so that we reset to a “not_pedaling”
-scenario.
-*/
-
-
 //8 bit register that holes value of "cadence_per"
 //NOTE: CADENCE_PER HAS A SYNCHRONOUS RESET?!
 //STAGE 1 ASYNCH RESET. 
@@ -213,7 +158,8 @@ always@(posedge clk, negedge rst_n)begin
 end
 
 logic [23:0] threeSecTimer;
-assign cadence_rise = rise_reg &~ cadence_filt;
+assign cadence_rise = ~rise_reg & cadence_filt;
+assign third_sec_equals=(threeSecTimer==THIRD_SEC);
 assign capture_per = third_sec_equals || cadence_rise;
 
 //ERROR: unnessacery, as stg_2_input already selects?

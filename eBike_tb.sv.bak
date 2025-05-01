@@ -49,10 +49,6 @@ module eBike_tb();
 		     .lowBlu(lowBlu),.hallGrn(hallGrn),.hallYlw(hallYlw),
 		     .hallBlu(hallBlu),.avg_curr(curr));
 
-         assign coilGY=iPHYS.coilGY;
-         assign coilYB=iPHYS.coilYB;
-         assign coilBG=iPHYS.coilBG;
-
   //////////////////////
   // Instantiate DUT //
   ////////////////////
@@ -117,7 +113,7 @@ module eBike_tb();
     RST_n = 1'b0;
     cadence = 1'b0;
     BATT = 12'hfff;
-    BRAKE = 12'hFFF;
+    BRAKE = 12'h000;
     TORQUE = 12'h000;
     tgglMd = 1'b0;
     YAW_RT = 16'h0;
