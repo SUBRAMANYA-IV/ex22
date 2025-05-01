@@ -1,125 +1,147 @@
-//// <CORRECT FILE>
-//// <CORRECT FILE>
-//// <CORRECT FILE>
-module sensorCondition(
-    input logic clk, 
+module sensorCondition (
+    input logic clk,
     input logic rst_n,
     input logic [11:0] torque,
     input logic cadence_raw,
     input logic signed [11:0] curr,
-    input logic [12:0] incline, 
+    input logic [12:0] incline,
     input logic [2:0] scale,
     input logic [11:0] batt,
     output logic signed [12:0] error,
     output logic not_pedaling,
     output logic TX
 );
-        
-parameter FAST_SIM = 1;
 
-logic [11:0] curr_avg;
-logic [11:0] torque_avg;
+  logic forcedFiltCadence;
 
-logic cadence_Sfilt; //filtered cadence signal  
-logic cadence_rise;  //
-logic [7:0] cadence_per;  //period of filtered candance signal 
+  parameter FAST_SIM = 1;
 
-//used to detect falling edge on not_pedaling
-logic pedaling_resREG;
-logic pedaling_resumes; 
+  logic [11:0] curr_avg;
+  logic [11:0] torque_avg;
 
-logic [4:0] cadence; 
+  logic cadence_Sfilt;  //filtered cadence signal
+  logic cadence_rise;  //
+  logic [7:0] cadence_per;  //period of filtered candance signal
 
-logic signed [11:0] target_curr;
+  //used to detect falling edge on not_pedalin
+  logic pedaling_resREG;
+  logic pedaling_resumes;
 
-//instantiate cadence filter module to filter raw candence signal 
-cadence_filt #(.FAST_SIM(FAST_SIM)) filt1(.clk(clk), .rst_n(rst_n) , .cadence(cadence_raw), .cadence_filt(cadence_Sfilt), .cadence_rise(cadence_rise));
-cadence_meas #(.FAST_SIM(FAST_SIM)) meas1( .clk(clk), .rst_n(rst_n), .cadence_filt(cadence_Sfilt), .cadence_per(cadence_per), .not_pedaling(not_pedaling));
-cadence_LU lu1(.cadence_per(cadence_per),.cadence(cadence));
+  logic [4:0] cadence;
 
-//instantiate telemetry (also contains UART transmitter) ****NEEDS TO FILL IN PARAMS***
-telemetry telem1(.clk(clk), .rst_n(rst_n), .batt_v(batt), .avg_curr(curr_avg), .avg_torque(torque_avg), .TX(TX));
+  logic signed [11:0] target_curr;
 
-//instantiate desired drive to get target_curr ****NEEDS TO FILL IN PARAMS***
-desiredDrive drive1(.not_pedaling(not_pedaling), .avg_torque(torque_avg), .cadence(cadence), .incline(incline), .scale(scale), .target_curr(target_curr));
+  //instantiate cadence filter module to filter raw candence signal
+  cadence_filt #(
+      .FAST_SIM(FAST_SIM)
+  ) filt1 (
+      .clk(clk),
+      .rst_n(rst_n),
+      .cadence(cadence_raw),
+      .cadence_filt(cadence_Sfilt),
+      .cadence_rise(cadence_rise)
+  );
+  cadence_meas #(
+      .FAST_SIM(FAST_SIM)
+  ) meas1 (
+      .clk(clk),
+      .rst_n(rst_n),
+      .cadence_filt(cadence_Sfilt),
+      .cadence_per(cadence_per),
+      .not_pedaling(not_pedaling)
+  );
+  cadence_LU lu1 (
+      .cadence_per(cadence_per),
+      .cadence(cadence)
+  );
 
-//falling edge detector for not_pedaling
-always_ff @(posedge clk or negedge rst_n) begin 
-    if(!rst_n)
-        pedaling_resREG <= 0; 
-    else 
-        pedaling_resREG <=not_pedaling;    
-end 
+  //instantiate telemetry (also contains UART transmitter) ****NEEDS TO FILL IN PARAMS**
+  telemetry telem1 (
+      .clk(clk),
+      .rst_n(rst_n),
+      .batt_v(batt),
+      .avg_curr(curr_avg),
+      .avg_torque(torque_avg),
+      .TX(TX)
+  );
 
-//falling edge on not_pedaling
-assign pedaling_resumes = ~not_pedaling & pedaling_resREG; 
+  //instantiate desired drive to get target_curr ****NEEDS TO FILL IN PARAMS**
+  desiredDrive drive1 (
+      .not_pedaling(not_pedaling),
+      .avg_torque(torque_avg),
+      .cadence(cadence),
+      .incline(incline),
+      .scale(scale),
+      .target_curr(target_curr)
+  );
 
-//<siganls used for current exponential average>
-logic [13:0] current_accum; 
-logic [13:0] newC_accum; 
-logic  include_smpl; 
-logic [21:0] tmr_c;  
+  //falling edge detector for not_pedalin
+  always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n) pedaling_resREG <= 0;
+    else pedaling_resREG <= not_pedaling;
+  end
 
-//determine when timer is full 
-generate if (FAST_SIM) 
-    assign include_smpl = &tmr_c[15:0];  //during fast simulation reduce bit width of counter 
-else
-    assign include_smpl = &tmr_c;
-endgenerate
+  //falling edge on not_pedalin
+  assign pedaling_resumes = ~not_pedaling & pedaling_resREG;
 
+  //<siganls used for current exponential average
+  logic [13:0] current_accum;
+  logic [13:0] newC_accum;
+  logic include_smpl;
+  logic [21:0] tmr_c;
 
-//free running timer for collecting periodic current samples
-always_ff @(posedge clk or negedge rst_n)begin 
-    if(!rst_n)
-        tmr_c <= 0; 
-    else 
-        tmr_c <= tmr_c +1;     
-end 
-
-//current exponential running average 
-always_ff @(posedge clk or negedge rst_n)begin 
-    if(!rst_n)
-       current_accum <= 0;
-    else if(include_smpl)  
-      current_accum <= newC_accum;
-end 
-
-assign newC_accum = ((current_accum * 3) >>> 2) + curr;  //formula for exponential running average 
-assign curr_avg = current_accum[13:2]; //average is current accum / 4
-
-//<siganls used for torque exponential average>
-logic [16:0] torque_accum; 
-logic [16:0] newT_accum;
-
-
-//torque exponential running average 
-always_ff @(posedge clk or negedge rst_n) begin 
-    if(!rst_n)
-        torque_accum <= 0;
-    else if(pedaling_resumes)  
-        torque_accum <= {1'b0,torque, 4'b0000};
-    else if(cadence_rise)
-        torque_accum <= newT_accum;
-end
-
-//formula for torque running average 
-assign newT_accum = ((torque_accum * 31) / 32) + torque;
-assign torque_avg = torque_accum[16:5];
+  //determine when timer is full
+  generate
+    if (FAST_SIM)
+      assign include_smpl = &tmr_c[15:0];  //during fast simulation reduce bit width of counter
+    else assign include_smpl = &tmr_c;
+  endgenerate
 
 
-//FIX ERROR: SHOULD INCLUDE LOW_BATT_THRES AND NOT_PEDALING
-localparam LOW_BATT_THRES=12'ha98;
+  //free running timer for collecting periodic current sample
+  always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n) tmr_c <= 0;
+    else tmr_c <= tmr_c + 1;
+  end
 
-always_comb begin
-  if(not_pedaling || batt<LOW_BATT_THRES)
-    error=13'b0;
-  else
-    error=target_curr-curr_avg;
-end
+  //current exponential running average
+  always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n) current_accum <= 0;
+    else if (include_smpl) current_accum <= newC_accum;
+  end
+
+  assign newC_accum = ((current_accum * 3) >>> 2) + curr;  //formula for exponential running average
+  assign curr_avg = current_accum[13:2];  //average is current accum 
+
+  //<siganls used for torque exponential average
+  logic [16:0] torque_accum;
+  logic [16:0] newT_accum;
+
+
+  //torque exponential running average
+  always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n) torque_accum <= 0;
+    else if (pedaling_resumes) torque_accum <= {1'b0, torque, 4'b0000};
+    else if (cadence_rise) torque_accum <= newT_accum;
+  end
+
+  //formula for torque running avera
+  assign newT_accum = ((torque_accum * 31) / 32) + torque;
+  assign torque_avg = torque_accum[16:5];
+
+
+  //FIX ERROR: SHOULD INCLUDE LOW_BATT_THRES AND NOT_PEDALIN
+  localparam LOW_BATT_THRES = 12'ha98;
+
+  always_comb begin
+    if (not_pedaling || batt < LOW_BATT_THRES) error = 13'b0;
+    else error = target_curr - curr_avg;
+  end
 
 endmodule
 
-module cadence_meas(
+
+module cadence_meas (
     input clk,
     input rst_n,
     input cadence_filt,
@@ -127,94 +149,70 @@ module cadence_meas(
     output logic not_pedaling
 );
 
-//FAST SIM logic that was provided
-localparam THIRD_SEC_REAL = 24'hE4E1C0;
-localparam THIRD_SEC_FAST = 24'h007271;
-localparam THIRD_SEC_UPPER = 8'hE4;
+  //FAST SIM logic that was provide
+  localparam THIRD_SEC_REAL = 24'hE4E1C0;
+  localparam THIRD_SEC_FAST = 24'h007271;
+  localparam THIRD_SEC_UPPER = 8'hE4;
 
-parameter FAST_SIM = 0;
-logic cadence_rise;
-logic [23:0] THIRD_SEC;
+  parameter FAST_SIM = 0;
+  logic [23:0] THIRD_SEC;
 
-generate if (FAST_SIM)
-   assign THIRD_SEC = THIRD_SEC_FAST;
-else
-   assign THIRD_SEC = THIRD_SEC_REAL;
-endgenerate
+  generate
+    if (FAST_SIM) assign THIRD_SEC = THIRD_SEC_FAST;
+    else assign THIRD_SEC = THIRD_SEC_REAL;
+  endgenerate
 
-//8 bit register that holes value of "cadence_per"
-//NOTE: CADENCE_PER HAS A SYNCHRONOUS RESET?!
-//STAGE 1 ASYNCH RESET. 
-//should values out of fastsim?
-logic third_sec_equals;
-logic [23:0] third_sec_cnt;
-logic capture_per;
-logic rise_reg;
-always@(posedge clk, negedge rst_n)begin
-    if(!rst_n)
-        rise_reg<=1'b0;
-    else 
-        rise_reg<=cadence_filt;
-end
+  //first stage 24 wide re
+  reg [23:0] firstReg;
 
-logic [23:0] threeSecTimer;
-assign cadence_rise = ~rise_reg & cadence_filt;
-assign third_sec_equals=(threeSecTimer==THIRD_SEC);
-assign capture_per = third_sec_equals || cadence_rise;
+  logic cadence_rise;
+  reg cadenceReg;
+  assign cadence_rise = ~cadenceReg & cadence_filt;
+  //detect rising edge of cadence, cadence_ris
+  always @(posedge clk, negedge rst_n) begin
+    if (!rst_n) cadenceReg <= 1'b0;
+    else cadenceReg <= cadence_filt;
+  end
 
-//ERROR: unnessacery, as stg_2_input already selects?
-//logic [7:0] stage_1_output = (FAST_SIM) ? threeSecTimer[14:7] : threeSecTimer[23:16];
-always@(posedge clk, negedge rst_n) begin
-    //check for syncrhonous reset?
-    if (!rst_n) begin
-        threeSecTimer <= 24'b0;
-    end
+  logic third_sec_equals; 
+  assign third_sec_equals=(THIRD_SEC == firstReg);
 
+
+  always @(posedge clk, negedge rst_n) begin
+    if (!rst_n) firstReg <= 24'b0;
     else begin
-        //if the rising edge is true, load either bits [23:16] if FAST_SIM is false,
-        //bits [14:7] if FAST_SIM is true. 
-
-        //if THIRD_SEC is true, then freeze the clock
-        if (cadence_rise) 
-            threeSecTimer <= 24'b0;
-
-        else if(threeSecTimer == THIRD_SEC) 
-            threeSecTimer <= threeSecTimer;
-
-        else 
-            threeSecTimer <= threeSecTimer + 1;
-        
-        //if the 24 bit timer gets to THIRD_SEC, then timer is frozen
-        //at that value and the value is captured in the 8-bit cadence_per registe
+      if (third_sec_equals && ~cadence_rise) firstReg <= firstReg;
+      else if (third_sec_equals && cadence_rise) firstReg <= 24'b0;
+      else if (~third_sec_equals && ~cadence_rise) firstReg <= firstReg + 1;
+      else if (~third_sec_equals && cadence_rise) firstReg <= 24'b0;
     end
-end
+  end
 
-//STAGE 2 SYNCRHONOUS BLOCK
-logic [7:0] stg2Input;
-
-assign not_pedaling = (cadence_per == THIRD_SEC_UPPER);
-assign stg2Input = FAST_SIM ? (threeSecTimer[14:7]) : (threeSecTimer[23:16]);
-
-logic [7:0] cadence_per_input;
-always_comb begin
-    if(!rst_n) begin
-        cadence_per_input = THIRD_SEC_UPPER;
-    end else begin
-        if(capture_per) 
-            cadence_per_input=stg2Input;
-        else 
-            cadence_per_input=cadence_per;
+  logic capture_per;
+  assign capture_per=cadence_rise||third_sec_equals;
+  logic [7:0] stg_2_input;
+  assign stg_2_input = (FAST_SIM) ? firstReg[14:7] : firstReg[23:16];
+  always @(posedge clk) begin
+    if (!rst_n) cadence_per <= THIRD_SEC_UPPER;
+    else begin
+      if (capture_per) cadence_per <= stg_2_input;
+      else cadence_per <= cadence_per;
     end
-end
+  end
 
-always@(posedge clk)begin
-    if(!rst_n)begin
-        cadence_per<=THIRD_SEC_UPPER;
-    end else begin
-    cadence_per <= cadence_per_input;
-    end
-end
-
+  assign not_pedaling = (cadence_per == THIRD_SEC_UPPER);
 
 
 endmodule
+
+
+
+
+
+
+
+
+
+
+
+
