@@ -1,11 +1,12 @@
 module tgglMd(clk,rst_n,tgglMode,scale);
 
 input clk, rst_n, tgglMode;
-output logic [2:0] scale;
+   output logic [2:0] scale;
+   output logic [1:0] cycle;
 
 logic q1,q2,q3;   //Signals used to double flop Asynch signal and then detect rising edge on synched signal
 logic rise_edge;  //capture rising edge 
-logic [1:0] cycle;
+
 
 always_ff @(posedge clk or negedge rst_n ) begin 
    
