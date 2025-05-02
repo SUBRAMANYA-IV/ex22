@@ -10,7 +10,7 @@ logic full;             //will go high every 1/48 of a second and allows I & D t
 logic [19:0] decimator; //20 bit counter to approximate 1/48 of a second with a 50 Mhz clk
 
 //sim param used to speed up simulation for testing by reducing counter bit width
-parameter FAST_SIM = 1;
+parameter FAST_SIM = 0;
 
 //D term 
 logic signed [12:0] q1, q2, q3;     //three pipeline flops used to represent derivitive q1 = f(t) q3 = f(t-△t) 
