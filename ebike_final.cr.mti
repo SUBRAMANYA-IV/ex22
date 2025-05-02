@@ -127,6 +127,14 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	AnalogModel
 
+} {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv {2 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module eBike_tb
+** Warning: C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv(247): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	eBike_tb
+
 } {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/rst_synch.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/rst_synch.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module rst_synch

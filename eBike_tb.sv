@@ -81,7 +81,7 @@ module eBike_tb();
   //////////////////////////
   initial begin
     init();
-    brakeTest();
+    telemetryTest();
     $stop();
   end
   

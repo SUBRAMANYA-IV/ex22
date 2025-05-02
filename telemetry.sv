@@ -60,15 +60,7 @@ end
 logic full; // asserts when it's time to send a new packet
 counter_20b uart_tmr(.clk(clk), .rst_n(rst_n), .full(full));
 
-logic [7:0] tx_data_in, tx_data;
-always_ff @(posedge clk, negedge rst_n) begin
-    if(!rst_n) begin
-        tx_data <= 8'b0;
-    end
-    else begin
-        tx_data <= tx_data_in;
-    end
-end
+logic [7:0] tx_data;
 
 // UART device used to transmit telemetry data
 logic trmt;
@@ -79,7 +71,7 @@ UART_tx uart(.clk(clk),.rst_n(rst_n),.TX(TX),.trmt(trmt),.tx_data(tx_data),.tx_d
 always_comb begin
     // default values
     trmt = 1'b0;
-	tx_data_in = tx_data;
+	tx_data = 8'h0;
     
     case(state)
         IDLE: begin
@@ -93,15 +85,15 @@ always_comb begin
             curr_byte = byte_num;
             nxt_state = (&curr_byte) ? IDLE : WAIT; // start over after last byte is transmitted
             case(byte_num)
-                3'b000: tx_data_in = 8'hAA;
-                3'b001: tx_data_in = 8'h55;
-                3'b010: tx_data_in = {4'h0, batt_v[11:8]};
-                3'b011: tx_data_in = batt_v[7:0];
-                3'b100: tx_data_in = {4'h0, avg_curr[11:8]};
-                3'b101: tx_data_in = avg_curr[7:0];
-                3'b110: tx_data_in = {4'h0, avg_torque[11:8]};
-                3'b111: tx_data_in = avg_torque[7:0];
-                default: tx_data_in = 8'h0;
+                3'b000: tx_data = 8'hAA;
+                3'b001: tx_data = 8'h55;
+                3'b010: tx_data = {4'h0, batt_v[11:8]};
+                3'b011: tx_data = batt_v[7:0];
+                3'b100: tx_data = {4'h0, avg_curr[11:8]};
+                3'b101: tx_data = avg_curr[7:0];
+                3'b110: tx_data = {4'h0, avg_torque[11:8]};
+                3'b111: tx_data = avg_torque[7:0];
+                default: tx_data = 8'h0;
             endcase
             trmt = 1'b1;
             
