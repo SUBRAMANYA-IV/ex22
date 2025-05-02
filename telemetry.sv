@@ -79,6 +79,7 @@ UART_tx uart(.clk(clk),.rst_n(rst_n),.TX(TX),.trmt(trmt),.tx_data(tx_data),.tx_d
 always_comb begin
     // default values
     trmt = 1'b0;
+	tx_data_in = tx_data;
     
     case(state)
         IDLE: begin
