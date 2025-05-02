@@ -238,6 +238,17 @@ module eBike_tb();
   endtask
 
   task inclineTest();
+    torque = 12'h500;
+    YAW_RT = 16'h2000;
+    repeat(1000000)
+      @(posedge clk);
+    YAW_RT = 16'h0000;
+    repeat(1000000)
+      @(posedge clk);
+    YAW_RT = 16'hE000;
+    repeat(1000000)
+      @(posedge clk);
+    $stop();
   endtask
 
   task tgglMdTest();

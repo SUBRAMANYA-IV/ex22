@@ -69,6 +69,21 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	nonoverlap
 
+} {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/PID.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/PID.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PID
+
+Top level modules:
+	PID
+
+} {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv {2 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module inertial_integrator
+** Warning: C:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv(32): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	inertial_integrator
+
 } {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/UART_rcv.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/UART_rcv.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module UART_rcv
@@ -82,14 +97,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	sensorCondition_tb
-
-} {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv {2 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module inertial_integrator
-** Warning: C:/Users/allen/School/ece551/Final-Git/ex22/inertial_integrator.sv(32): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-
-Top level modules:
-	inertial_integrator
 
 } {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/A2D_intf.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/A2D_intf.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -107,12 +114,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	desiredDrive
 
-} {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/eBikePhysics.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/eBikePhysics.sv
+} {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/AnalogModel.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/AnalogModel.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module eBikePhysics
+-- Compiling module AnalogModel
 
 Top level modules:
-	eBikePhysics
+	AnalogModel
 
 } {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/brushless.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/brushless.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -121,19 +128,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	brushless
 
-} {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/AnalogModel.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/AnalogModel.sv
+} {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/eBikePhysics.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/eBikePhysics.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module AnalogModel
+-- Compiling module eBikePhysics
 
 Top level modules:
-	AnalogModel
-
-} {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module eBike_tb
-
-Top level modules:
-	eBike_tb
+	eBikePhysics
 
 } {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/rst_synch.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/rst_synch.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -142,6 +142,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	rst_synch
 
+} {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module eBike_tb
+
+Top level modules:
+	eBike_tb
+
 } {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/mtr_drv.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/mtr_drv.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module mtr_drv
@@ -149,19 +156,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	mtr_drv
 
-} {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/tgglMd.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/tgglMd.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module tgglMd
-
-Top level modules:
-	tgglMd
-
 } {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/UART_tx.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/UART_tx.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module UART_tx
 
 Top level modules:
 	UART_tx
+
+} {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/tgglMd.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/tgglMd.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tgglMd
+
+Top level modules:
+	tgglMd
 
 } {} {}} C:/Users/allen/School/ece551/Final-Git/ex22/eBike.sv {1 {vlog -work work -sv -stats=none C:/Users/allen/School/ece551/Final-Git/ex22/eBike.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
