@@ -1,4 +1,4 @@
-module tgglMd(clk,rst_n,tgglMode,scale);
+module tgglMd(clk,rst_n,tgglMode,scale, cycle);
 
 input clk, rst_n, tgglMode;
    output logic [2:0] scale;

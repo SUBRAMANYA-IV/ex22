@@ -4,7 +4,7 @@
 			 inertSS_n,inertSCLK,inertMOSI,inertMISO,
 			 inertINT,cadence,TX,tgglMd,LED);
 			 
-  parameter FAST_SIM = 1;		// accelerate simulation by default
+  parameter FAST_SIM = 0;		// accelerate simulation by default
 
   input clk;				// 50MHz clk
   input RST_n;				// active low RST_n from push button
@@ -68,12 +68,12 @@
   // Instantiate SensorCondition block to filter & average //
   // readings and provide cadence_vec, and zero_cadence   //
   /////////////////////////////////////////////////////////
-  sensorCondition  #(.FAST_SIM(1)) senscond(.clk(clk), .rst_n(rst_n), .torque(torque), .cadence_raw(cadence), .curr(curr), .incline(incline), .scale(scale), .batt(batt), .error(error), .not_pedaling(not_pedaling), .TX(TX)); 
+  sensorCondition  #(.FAST_SIM(0)) senscond(.clk(clk), .rst_n(rst_n), .torque(torque), .cadence_raw(cadence), .curr(curr), .incline(incline), .scale(scale), .batt(batt), .error(error), .not_pedaling(not_pedaling), .TX(TX)); 
 					   
   ///////////////////////////////////////////////////
   // Instantiate PID to determine drive magnitude //
   /////////////////////////////////////////////////		   
-  PID #(.FAST_SIM(1)) pid(.clk(clk), .rst_n(rst_n), .not_pedaling(not_pedaling), .error(error), .drv_mag(drv_mag)); 
+  PID #(.FAST_SIM(0)) pid(.clk(clk), .rst_n(rst_n), .not_pedaling(not_pedaling), .error(error), .drv_mag(drv_mag)); 
   
   ////////////////////////////////////////////////
   // Instantiate brushless DC motor controller //
