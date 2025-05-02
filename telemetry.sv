@@ -60,7 +60,7 @@ end
 logic full; // asserts when it's time to send a new packet
 counter_20b uart_tmr(.clk(clk), .rst_n(rst_n), .full(full));
 
-logic [7:0] tx_data_in, tx_data
+logic [7:0] tx_data_in, tx_data;
 always_ff @(posedge clk, negedge rst_n) begin
     if(!rst_n) begin
         tx_data <= 8'b0;

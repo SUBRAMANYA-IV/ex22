@@ -1008,3 +1008,28 @@ run -all
 # ** Note: $stop    : C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv(85)
 #    Time: 80000010 ps  Iteration: 1  Instance: /eBike_tb
 # Break in Module eBike_tb at C:/Users/allen/School/ece551/Final-Git/ex22/eBike_tb.sv line 85
+# Compile of A2D_intf.sv was successful.
+# Compile of AnalogModel.sv was successful.
+# Compile of brushless.sv was successful.
+# Compile of cadence_filt.sv was successful.
+# Compile of cadence_LU.sv was successful.
+# Compile of desiredDrive.sv was successful.
+# Compile of eBike.sv was successful.
+# Compile of eBike_tb.sv was successful with warnings.
+# Compile of eBikePhysics.sv was successful.
+# Compile of inert_intf.sv was successful.
+# Compile of inertial_integrator.sv was successful with warnings.
+# Compile of mtr_drv.sv was successful.
+# Compile of nonoverlap.sv was successful.
+# Compile of PID.sv was successful.
+# Compile of PWM.sv was successful.
+# Compile of rst_synch.sv was successful.
+# Compile of sensorCondition.sv was successful.
+# Compile of sensorCondition_tb.sv was successful.
+# Compile of SPI_mnrch.sv was successful.
+# Compile of telemetry.sv failed with 1 errors.
+# Compile of tgglMd.sv was successful.
+# Compile of UART_tx.sv was successful.
+# Compile of SPI_ADC128S.sv was successful.
+# Compile of UART_rcv.sv was successful.
+# 24 compiles, 1 failed with 1 error.
