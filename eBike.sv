@@ -93,6 +93,6 @@
   /////////////////////////////////////////////////////////////////
   // Instantiate PB_intf block to establish setting/LED & scale //
   ///////////////////////////////////////////////////////////////
-  tgglMd pbint(.clk(clk), .rst_n(rst_n), .tgglMode(tgglMd), .scale(scale));
+	 tgglMd pbint(.clk(clk), .rst_n(rst_n), .tgglMode(tgglMd), .scale(scale), .cycle(LED));
 
 endmodule
