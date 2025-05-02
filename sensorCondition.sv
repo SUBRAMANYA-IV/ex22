@@ -15,6 +15,8 @@ module sensorCondition (
   logic forcedFiltCadence;
 
   parameter FAST_SIM = 1;
+  
+  logic signed [12:0] error1;
 
   logic [11:0] curr_avg;
   logic [11:0] torque_avg;
@@ -28,8 +30,19 @@ module sensorCondition (
   logic pedaling_resumes;
 
   logic [4:0] cadence;
+  logic [4:0] cadence1;
 
   logic signed [11:0] target_curr;
+  
+  logic [12:0] incline1; 
+  
+   always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n) 
+		incline1 <= 0;
+    else  
+		incline1 <= incline;
+  end
+  
 
   //instantiate cadence filter module to filter raw candence signal
   cadence_filt #(
@@ -52,8 +65,14 @@ module sensorCondition (
   );
   cadence_LU lu1 (
       .cadence_per(cadence_per),
-      .cadence(cadence)
+      .cadence(cadence1)
   );
+
+always_ff @(posedge clk)begin 
+ 
+ cadence <= cadence1;
+
+end 
 
   //instantiate telemetry (also contains UART transmitter) ****NEEDS TO FILL IN PARAMS**
   telemetry telem1 (
@@ -70,9 +89,10 @@ module sensorCondition (
       .not_pedaling(not_pedaling),
       .avg_torque(torque_avg),
       .cadence(cadence),
-      .incline(incline),
+      .incline(incline1),
       .scale(scale),
-      .target_curr(target_curr)
+      .target_curr(target_curr),
+	  .clk(clk)
   );
 
   //falling edge detector for not_pedalin
@@ -134,10 +154,19 @@ module sensorCondition (
   localparam LOW_BATT_THRES = 12'ha98;
 
   always_comb begin
-    if (not_pedaling || batt < LOW_BATT_THRES) error = 13'b0;
-    else error = target_curr - curr_avg;
+    if (not_pedaling || batt < LOW_BATT_THRES) error1 = 13'b0;
+    else error1 = target_curr - curr_avg;
   end
-
+  
+  
+  always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n) 
+		error <= 0;
+    else  
+	    error <= error1; 
+  end
+  
+  
 endmodule
 
 
