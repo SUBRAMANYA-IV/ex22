@@ -210,39 +210,39 @@ module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, vld, incline);
             READDATA: begin // read all required values into holding regs
                 if(SS_n) begin
                     case (curr_op)
-                        4'd0: begin // roll high
-                            nxt_cmd = 16'hA500;
-                        end
-                        4'd1: begin // roll low
+                        4'd0: begin // roll low
                             nxt_cmd = 16'hA400;
-                            R_H_en = 1'b1;
                         end
-                        4'd2: begin // yaw high
-                            nxt_cmd = 16'hA700;
+                        4'd1: begin // roll high
+                            nxt_cmd = 16'hA500;
                             R_L_en = 1'b1;
                         end
-                        4'd3: begin // yaw low 
+                        4'd2: begin // yaw low
                             nxt_cmd = 16'hA600;
-                            Y_H_en = 1'b1;
+                            R_H_en = 1'b1;
                         end
-                        4'd4: begin // ay high
-                            nxt_cmd = 16'hAB00;
+                        4'd3: begin // yaw high 
+                            nxt_cmd = 16'hA700;
                             Y_L_en = 1'b1;
                         end
-                        4'd5: begin // ay low
+                        4'd4: begin // ay low
                             nxt_cmd = 16'hAA00;
-                            AY_H_en = 1'b1;
+                            Y_H_en = 1'b1;
                         end
-                        4'd6: begin // az high
-                            nxt_cmd = 16'hAD00;
+                        4'd5: begin // ay high
+                            nxt_cmd = 16'hAB00;
                             AY_L_en = 1'b1;
                         end
-                        4'd7: begin // az low
+                        4'd6: begin // az low
                             nxt_cmd = 16'hAC00;
-                            AZ_H_en = 1'b1;
+                            AY_H_en = 1'b1;
+                        end
+                        4'd7: begin // az high
+                            nxt_cmd = 16'hAD00;
+                            AZ_L_en = 1'b1;
                         end
                         4'd8: begin
-                            AZ_L_en = 1'b1; // cmd is a don't care, we just need the final reading from the spi
+                            AZ_H_en = 1'b1; // cmd is a don't care, we just need the final reading from the spi
                         end
                         4'd9: begin
                             vld = 1'b1; // don't tell integrator to collect data until AZ_L appears at holding reg output after op 8

@@ -81,7 +81,7 @@ module eBike_tb();
   //////////////////////////
   initial begin
     init();
-    torqueTest();
+    inclineTest();
   end
   
   ///////////////////
@@ -233,16 +233,14 @@ module eBike_tb();
       @(posedge clk) begin
       end
     end
-    
-
   endtask
 
   task inclineTest();
-    torque = 12'h500;
-    YAW_RT = 16'h2000;
+    TORQUE = 12'h0500;
+    YAW_RT = 16'h0000;
     repeat(1000000)
       @(posedge clk);
-    YAW_RT = 16'h0000;
+    YAW_RT = 16'h2000;
     repeat(1000000)
       @(posedge clk);
     YAW_RT = 16'hE000;
